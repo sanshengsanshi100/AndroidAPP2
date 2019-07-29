@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="0"
+            android:paddingTop="15dp"
+            android:paddingEnd="15dp"
+            android:gravity="right"
+            />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+        <Button
+            android:id="@+id/btn_left"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onClickNum"
+            android:text="("/>
+
+        <Button
+            android:id="@+id/btn_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClickNum"
+            android:text=")"/>
+
+        <Button
+            android:id="@+id/btn_ce"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="cClick"
+            android:text="C"/>
+
+        <Button
+            android:id="@+id/btn_del"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="delString"
+            android:text="del"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+        <Button
+            android:id="@+id/btn1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onClickNum"
+            android:text="1"/>
+
+        <Button
+            android:id="@+id/btn2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClickNum"
+            android:text="2"/>
+
+        <Button
+            android:id="@+id/btn3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClickNum"
+            android:text="3"/>
+
+        <Button
+            android:id="@+id/btnX"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="calculate"
+            android:text="×"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/btn4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onClickNum"
+            android:text="4"/>
+
+        <Button
+            android:id="@+id/btn5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClickNum"
+            android:text="5"/>
+
+        <Button
+            android:id="@+id/btn6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClickNum"
+            android:text="6"/>
+
+        <Button
+            android:id="@+id/btn_jian"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="calculate"
+            android:text="-"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/btn7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onClickNum"
+            android:text="7"/>
+
+        <Button
+            android:id="@+id/btn8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClickNum"
+            android:text="8"/>
+
+        <Button
+            android:id="@+id/btn9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClickNum"
+            android:text="9"/>
+
+        <Button
+            android:id="@+id/btn_jia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="calculate"
+            android:text="+"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/btn_dian"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="calculate"
+            android:text="."/>
+
+        <Button
+            android:id="@+id/btn0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClickNum"
+            android:text="0"/>
+
+        <Button
+            android:id="@+id/btn_dengyu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="calculate"
+            android:text="="/>
+
+        <Button
+            android:id="@+id/btn_chu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="calculate"
+            android:text="÷"/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <Button
+            android:id="@+id/btn_web"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="webBaidu"
+            android:text="个税1"/>
+
+        <Button
+            android:id="@+id/btn_geshui"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="grshui"
+            android:text="个税2"/>
+
+        <Button
+            android:id="@+id/btn_geshui2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="grshui2"
+            android:text="个税3"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

@@ -1,0 +1,1280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:background="@drawable/border_write"
+                android:layout_width="85dp"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                android:text="税前收入"/>
+
+            <EditText
+                android:id="@+id/et_before"
+                android:background="@drawable/border_write"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="numberDecimal"
+                android:padding="4dp"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:background="@drawable/border_write"
+                android:layout_width="85dp"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                android:text="缴费基数"/>
+
+            <EditText
+                android:id="@+id/et_jishu"
+                android:background="@drawable/border_write"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="numberDecimal"
+                android:padding="4dp"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:background="@drawable/border_write"
+                android:layout_width="85dp"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                android:text="薪酬月数"/>
+
+            <EditText
+                android:id="@+id/et_yueshu"
+                android:background="@drawable/border_write"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="numberDecimal"
+                android:padding="4dp"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:background="@drawable/border_write"
+                android:layout_width="85dp"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                android:text="专项扣除"/>
+
+            <EditText
+                android:id="@+id/et_zhuanxiangkouchu"
+                android:background="@drawable/border_write"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="numberDecimal"
+                android:padding="4dp"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:background="@drawable/border_write"
+                android:layout_width="85dp"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                android:text="费用项目"/>
+
+            <TextView
+                android:background="@drawable/border_write"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                android:text="个人比例"/>
+
+            <TextView
+                android:background="@drawable/border_write"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                android:text="个人金额"/>
+
+            <TextView
+                android:background="@drawable/border_write"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                android:text="公司比例"/>
+
+            <TextView
+                android:background="@drawable/border_write"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                android:text="公司金额"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:background="@drawable/border_write"
+                android:layout_width="85dp"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                android:text="公积金" />
+
+            <EditText
+                android:id="@+id/bl_gongjijin"
+                android:background="@drawable/border_write"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:inputType="numberDecimal"
+                android:textSize="12sp"
+                android:textColor="@color/colorPrimaryDark"
+
+                android:padding="4dp"
+                android:text="0.07"/>
+
+            <TextView
+                android:id="@+id/tv_gongjijin"
+                android:background="@drawable/border_write"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                />
+            <EditText
+                android:id="@+id/bl_gongjijin_gs"
+                android:background="@drawable/border_write"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:inputType="numberDecimal"
+                android:textSize="12sp"
+                android:textColor="@color/colorPrimaryDark"
+
+                android:padding="4dp"
+                android:text="0.07"/>
+
+            <TextView
+                android:id="@+id/tv_gongjijin_gs"
+                android:background="@drawable/border_write"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:background="@drawable/border_write"
+                android:layout_width="85dp"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                android:text="补充公积金" />
+
+            <EditText
+                android:id="@+id/bl_buchong"
+                android:background="@drawable/border_write"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:inputType="numberDecimal"
+                android:textSize="12sp"
+                android:textColor="@color/colorPrimaryDark"
+
+                android:padding="4dp"
+                android:text="0.05"/>
+
+            <TextView
+                android:id="@+id/tv_buchong"
+                android:background="@drawable/border_write"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                />
+            <EditText
+                android:id="@+id/bl_buchong_gs"
+                android:background="@drawable/border_write"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:inputType="numberDecimal"
+                android:textSize="12sp"
+                android:textColor="@color/colorPrimaryDark"
+
+                android:padding="4dp"
+                android:text="0.05"/>
+
+            <TextView
+                android:id="@+id/tv_buchong_gs"
+                android:background="@drawable/border_write"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:background="@drawable/border_write"
+                android:layout_width="85dp"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                android:text="养老保险" />
+
+            <EditText
+                android:id="@+id/bl_yanglao"
+                android:background="@drawable/border_write"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:inputType="numberDecimal"
+                android:textSize="12sp"
+                android:textColor="@color/colorPrimaryDark"
+
+                android:padding="4dp"
+                android:text="0.08"/>
+
+            <TextView
+                android:id="@+id/tv_yanglao"
+                android:background="@drawable/border_write"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                />
+
+            <EditText
+                android:id="@+id/bl_yanglao_gs"
+                android:background="@drawable/border_write"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+
+                android:inputType="numberDecimal"
+                android:padding="4dp"
+                android:text="0.16"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_yanglao_gs"
+                android:background="@drawable/border_write"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:background="@drawable/border_write"
+                android:layout_width="85dp"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                android:text="医疗保险" />
+
+            <EditText
+                android:id="@+id/bl_yiliao"
+                android:background="@drawable/border_write"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:inputType="numberDecimal"
+                android:textSize="12sp"
+                android:textColor="@color/colorPrimaryDark"
+
+                android:padding="4dp"
+                android:text="0.02"/>
+
+            <TextView
+                android:id="@+id/tv_yiliao"
+                android:background="@drawable/border_write"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                />
+
+            <EditText
+                android:id="@+id/bl_yiliao_gs"
+                android:background="@drawable/border_write"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+
+                android:inputType="numberDecimal"
+                android:padding="4dp"
+                android:text="0.095"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_yiliao_gs"
+                android:background="@drawable/border_write"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:background="@drawable/border_write"
+                android:layout_width="85dp"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                android:text="失业保险" />
+
+            <EditText
+                android:id="@+id/bl_shiye"
+                android:background="@drawable/border_write"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:inputType="numberDecimal"
+                android:textSize="12sp"
+                android:textColor="@color/colorPrimaryDark"
+
+                android:padding="4dp"
+                android:text="0.005"/>
+
+            <TextView
+                android:id="@+id/tv_shiye"
+                android:background="@drawable/border_write"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                />
+
+            <EditText
+                android:id="@+id/bl_shiye_gs"
+                android:background="@drawable/border_write"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+
+                android:inputType="numberDecimal"
+                android:padding="4dp"
+                android:text="0.005"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_shiye_gs"
+                android:background="@drawable/border_write"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:background="@drawable/border_write"
+                android:layout_width="85dp"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                android:text="工伤保险" />
+
+            <EditText
+                android:id="@+id/bl_gongshang"
+                android:background="@drawable/border_write"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+
+                android:inputType="numberDecimal"
+                android:padding="4dp"
+                android:text="0.00"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_gongshang"
+                android:background="@drawable/border_write"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:text="0.00"
+                android:padding="4dp"
+                />
+
+            <EditText
+                android:id="@+id/bl_gongshang_gs"
+                android:background="@drawable/border_write"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:inputType="numberDecimal"
+                android:padding="4dp"
+                android:text="0.006"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_gongshang_gs"
+                android:background="@drawable/border_write"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:background="@drawable/border_write"
+                android:layout_width="85dp"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                android:text="生育保险" />
+
+            <EditText
+                android:id="@+id/bl_shengyu"
+                android:background="@drawable/border_write"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:inputType="numberDecimal"
+                android:padding="4dp"
+                android:text="0.00"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_shengyu"
+                android:background="@drawable/border_write"
+                android:layout_width="70dp"
+                android:text="0.00"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                />
+
+            <EditText
+                android:id="@+id/bl_shengyu_gs"
+                android:background="@drawable/border_write"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+
+                android:inputType="numberDecimal"
+                android:padding="4dp"
+                android:text="0.01"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_shengyu_gs"
+                android:background="@drawable/border_write"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:background="@drawable/border_write"
+                android:layout_width="85dp"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                android:text="企业年金" />
+
+            <EditText
+                android:id="@+id/bl_nianjin"
+                android:background="@drawable/border_write"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:inputType="numberDecimal"
+                android:padding="4dp"
+                android:text="0.02"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_nianjin"
+                android:background="@drawable/border_write"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                />
+
+            <EditText
+                android:id="@+id/bl_nianjin_gs"
+                android:background="@drawable/border_write"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+
+                android:inputType="numberDecimal"
+                android:padding="4dp"
+                android:text="0.08"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_nianjin_gs"
+                android:background="@drawable/border_write"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:background="@drawable/border_write"
+                android:layout_width="85dp"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                android:text="汇总" />
+
+            <EditText
+                android:id="@+id/bl_huizong"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/border_write"
+                android:inputType="numberDecimal"
+                android:padding="4dp"
+                android:text="0.245"
+
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_huizong"
+                android:background="@drawable/border_write"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                />
+
+            <EditText
+                android:id="@+id/bl_huizong_gs"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/border_write"
+                android:inputType="numberDecimal"
+                android:padding="4dp"
+                android:text="0.476"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv__huizong_gs"
+                android:background="@drawable/border_write"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/tax_cacl"
+                android:background="@drawable/border_write"
+                android:layout_width="85dp"
+                android:layout_height="35dp"
+                android:onClick="taxCacl"
+                android:padding="4dp"
+                android:text="计算" />
+            <Button
+                android:id="@+id/tax_saveDataClick"
+                android:background="@drawable/border_write"
+                android:layout_width="70dp"
+                android:layout_height="35dp"
+                android:onClick="saveDataClick"
+                android:padding="4dp"
+                android:text="保存" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:background="@drawable/border_write"
+                android:layout_width="85dp"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                android:text="税后收入" />
+
+            <TextView
+                android:id="@+id/et_after"
+                android:background="@drawable/border_write"
+                android:layout_width="95dp"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                />
+
+            <TextView
+                android:background="@drawable/border_write"
+                android:layout_width="85dp"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                android:text="缴税金额" />
+
+            <TextView
+                android:id="@+id/tv_shui"
+                android:background="@drawable/border_write"
+                android:layout_width="95dp"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:background="@drawable/border_write"
+                android:layout_width="85dp"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                android:text="年终奖" />
+
+            <TextView
+                android:id="@+id/tv_nianzhongjiang"
+                android:background="@drawable/border_write"
+                android:layout_width="95dp"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                />
+
+            <TextView
+                android:background="@drawable/border_write"
+                android:layout_width="85dp"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                android:text="年终奖税" />
+
+            <TextView
+                android:id="@+id/tv_nianzhongjiang_shui"
+                android:background="@drawable/border_write"
+                android:layout_width="95dp"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:background="@drawable/border_write"
+                android:layout_width="85dp"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                android:text="年薪" />
+
+            <TextView
+                android:id="@+id/tv_nianxin"
+                android:background="@drawable/border_write"
+                android:layout_width="95dp"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                />
+
+            <TextView
+                android:background="@drawable/border_write"
+                android:layout_width="85dp"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                android:text="年薪+金" />
+
+            <TextView
+                android:id="@+id/tv_nianxinjiajin"
+                android:background="@drawable/border_write"
+                android:layout_width="95dp"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:background="@drawable/border_write"
+                android:layout_width="85dp"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                android:text="公司总支出" />
+
+            <TextView
+                android:id="@+id/tv_zongzhichu"
+                android:background="@drawable/border_write"
+                android:layout_width="95dp"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                />
+        </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/tax_cacl2"
+            android:background="@drawable/border_write"
+            android:layout_width="85dp"
+            android:layout_height="35dp"
+            android:onClick="taxCacl"
+            android:padding="4dp"
+            android:text="计算-按年" />
+        <Button
+            android:id="@+id/tax_saveDataClick2"
+            android:background="@drawable/border_write"
+            android:layout_width="70dp"
+            android:layout_height="35dp"
+            android:onClick="saveDataClick"
+            android:padding="4dp"
+            android:text="保存-按年" />
+
+    </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:background="@drawable/border_write"
+                android:layout_width="85dp"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                android:text="薪酬月份" />
+
+            <TextView
+                android:background="@drawable/border_write"
+                android:layout_width="95dp"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                android:text="税后收入" />
+
+            <TextView
+                android:background="@drawable/border_write"
+                android:layout_width="85dp"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                android:text="缴税金额" />
+
+            <TextView
+                android:background="@drawable/border_write"
+                android:layout_width="95dp"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                android:text="其他备注" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:background="@drawable/border_write"
+                android:layout_width="85dp"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                android:text="1月" />
+
+            <TextView
+                android:id="@+id/tv_1yue"
+                android:background="@drawable/border_write"
+                android:layout_width="95dp"
+                android:layout_height="match_parent"
+                android:padding="4dp"/>
+
+            <TextView
+                android:id="@+id/tv_1yue_shui"
+                android:background="@drawable/border_write"
+                android:layout_width="85dp"
+                android:layout_height="match_parent"
+                android:padding="4dp"/>
+
+            <TextView
+                android:id="@+id/tv_1yue_qita"
+                android:layout_width="95dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/border_write"
+                android:padding="4dp" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:background="@drawable/border_write"
+                android:layout_width="85dp"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                android:text="2月" />
+
+            <TextView
+                android:id="@+id/tv_2yue"
+                android:background="@drawable/border_write"
+                android:layout_width="95dp"
+                android:layout_height="match_parent"
+                android:padding="4dp" />
+
+            <TextView
+                android:id="@+id/tv_2yue_shui"
+                android:background="@drawable/border_write"
+                android:layout_width="85dp"
+                android:layout_height="match_parent"
+                android:padding="4dp"/>
+
+            <TextView
+                android:id="@+id/tv_2yue_qita"
+                android:background="@drawable/border_write"
+                android:layout_width="95dp"
+                android:layout_height="match_parent"
+                android:padding="4dp"/>
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:background="@drawable/border_write"
+            android:layout_width="85dp"
+            android:layout_height="match_parent"
+            android:padding="4dp"
+            android:text="3月" />
+
+        <TextView
+            android:id="@+id/tv_3yue"
+            android:background="@drawable/border_write"
+            android:layout_width="95dp"
+            android:layout_height="match_parent"
+            android:padding="4dp" />
+
+        <TextView
+            android:id="@+id/tv_3yue_shui"
+            android:background="@drawable/border_write"
+            android:layout_width="85dp"
+            android:layout_height="match_parent"
+            android:padding="4dp"/>
+
+        <TextView
+            android:id="@+id/tv_3yue_qita"
+            android:background="@drawable/border_write"
+            android:layout_width="95dp"
+            android:layout_height="match_parent"
+            android:padding="4dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:background="@drawable/border_write"
+            android:layout_width="85dp"
+            android:layout_height="match_parent"
+            android:padding="4dp"
+            android:text="4月" />
+
+        <TextView
+            android:id="@+id/tv_4yue"
+            android:background="@drawable/border_write"
+            android:layout_width="95dp"
+            android:layout_height="match_parent"
+            android:padding="4dp" />
+
+        <TextView
+            android:id="@+id/tv_4yue_shui"
+            android:background="@drawable/border_write"
+            android:layout_width="85dp"
+            android:layout_height="match_parent"
+            android:padding="4dp"/>
+
+        <TextView
+            android:id="@+id/tv_4yue_qita"
+            android:background="@drawable/border_write"
+            android:layout_width="95dp"
+            android:layout_height="match_parent"
+            android:padding="4dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:background="@drawable/border_write"
+            android:layout_width="85dp"
+            android:layout_height="match_parent"
+            android:padding="4dp"
+            android:text="5月" />
+
+        <TextView
+            android:id="@+id/tv_5yue"
+            android:background="@drawable/border_write"
+            android:layout_width="95dp"
+            android:layout_height="match_parent"
+            android:padding="4dp" />
+
+        <TextView
+            android:id="@+id/tv_5yue_shui"
+            android:background="@drawable/border_write"
+            android:layout_width="85dp"
+            android:layout_height="match_parent"
+            android:padding="4dp"/>
+
+        <TextView
+            android:id="@+id/tv_5yue_qita"
+            android:background="@drawable/border_write"
+            android:layout_width="95dp"
+            android:layout_height="match_parent"
+            android:padding="4dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:background="@drawable/border_write"
+            android:layout_width="85dp"
+            android:layout_height="match_parent"
+            android:padding="4dp"
+            android:text="6月" />
+
+        <TextView
+            android:id="@+id/tv_6yue"
+            android:background="@drawable/border_write"
+            android:layout_width="95dp"
+            android:layout_height="match_parent"
+            android:padding="4dp" />
+
+        <TextView
+            android:id="@+id/tv_6yue_shui"
+            android:background="@drawable/border_write"
+            android:layout_width="85dp"
+            android:layout_height="match_parent"
+            android:padding="4dp"/>
+
+        <TextView
+            android:id="@+id/tv_6yue_qita"
+            android:background="@drawable/border_write"
+            android:layout_width="95dp"
+            android:layout_height="match_parent"
+            android:padding="4dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:background="@drawable/border_write"
+            android:layout_width="85dp"
+            android:layout_height="match_parent"
+            android:padding="4dp"
+            android:text="7月" />
+
+        <TextView
+            android:id="@+id/tv_7yue"
+            android:background="@drawable/border_write"
+            android:layout_width="95dp"
+            android:layout_height="match_parent"
+            android:padding="4dp" />
+
+        <TextView
+            android:id="@+id/tv_7yue_shui"
+            android:background="@drawable/border_write"
+            android:layout_width="85dp"
+            android:layout_height="match_parent"
+            android:padding="4dp"/>
+
+        <TextView
+            android:id="@+id/tv_7yue_qita"
+            android:background="@drawable/border_write"
+            android:layout_width="95dp"
+            android:layout_height="match_parent"
+            android:padding="4dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:background="@drawable/border_write"
+            android:layout_width="85dp"
+            android:layout_height="match_parent"
+            android:padding="4dp"
+            android:text="8月" />
+
+        <TextView
+            android:id="@+id/tv_8yue"
+            android:background="@drawable/border_write"
+            android:layout_width="95dp"
+            android:layout_height="match_parent"
+            android:padding="4dp" />
+
+        <TextView
+            android:id="@+id/tv_8yue_shui"
+            android:background="@drawable/border_write"
+            android:layout_width="85dp"
+            android:layout_height="match_parent"
+            android:padding="4dp"/>
+
+        <TextView
+            android:id="@+id/tv_8yue_qita"
+            android:background="@drawable/border_write"
+            android:layout_width="95dp"
+            android:layout_height="match_parent"
+            android:padding="4dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:background="@drawable/border_write"
+            android:layout_width="85dp"
+            android:layout_height="match_parent"
+            android:padding="4dp"
+            android:text="9月" />
+
+        <TextView
+            android:id="@+id/tv_9yue"
+            android:background="@drawable/border_write"
+            android:layout_width="95dp"
+            android:layout_height="match_parent"
+            android:padding="4dp" />
+
+        <TextView
+            android:id="@+id/tv_9yue_shui"
+            android:background="@drawable/border_write"
+            android:layout_width="85dp"
+            android:layout_height="match_parent"
+            android:padding="4dp"/>
+
+        <TextView
+            android:id="@+id/tv_9yue_qita"
+            android:background="@drawable/border_write"
+            android:layout_width="95dp"
+            android:layout_height="match_parent"
+            android:padding="4dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:background="@drawable/border_write"
+            android:layout_width="85dp"
+            android:layout_height="match_parent"
+            android:padding="4dp"
+            android:text="10月" />
+
+        <TextView
+            android:id="@+id/tv_10yue"
+            android:background="@drawable/border_write"
+            android:layout_width="95dp"
+            android:layout_height="match_parent"
+            android:padding="4dp" />
+
+        <TextView
+            android:id="@+id/tv_10yue_shui"
+            android:background="@drawable/border_write"
+            android:layout_width="85dp"
+            android:layout_height="match_parent"
+            android:padding="4dp"/>
+
+        <TextView
+            android:id="@+id/tv_10yue_qita"
+            android:background="@drawable/border_write"
+            android:layout_width="95dp"
+            android:layout_height="match_parent"
+            android:padding="4dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:background="@drawable/border_write"
+            android:layout_width="85dp"
+            android:layout_height="match_parent"
+            android:padding="4dp"
+            android:text="11月" />
+
+        <TextView
+            android:id="@+id/tv_11yue"
+            android:background="@drawable/border_write"
+            android:layout_width="95dp"
+            android:layout_height="match_parent"
+            android:padding="4dp" />
+
+        <TextView
+            android:id="@+id/tv_11yue_shui"
+            android:background="@drawable/border_write"
+            android:layout_width="85dp"
+            android:layout_height="match_parent"
+            android:padding="4dp"/>
+
+        <TextView
+            android:id="@+id/tv_11yue_qita"
+            android:background="@drawable/border_write"
+            android:layout_width="95dp"
+            android:layout_height="match_parent"
+            android:padding="4dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:background="@drawable/border_write"
+            android:layout_width="85dp"
+            android:layout_height="match_parent"
+            android:padding="4dp"
+            android:text="12月" />
+
+        <TextView
+            android:id="@+id/tv_12yue"
+            android:background="@drawable/border_write"
+            android:layout_width="95dp"
+            android:layout_height="match_parent"
+            android:padding="4dp" />
+
+        <TextView
+            android:id="@+id/tv_12yue_shui"
+            android:background="@drawable/border_write"
+            android:layout_width="85dp"
+            android:layout_height="match_parent"
+            android:padding="4dp"/>
+
+        <TextView
+            android:id="@+id/tv_12yue_qita"
+            android:background="@drawable/border_write"
+            android:layout_width="95dp"
+            android:layout_height="match_parent"
+            android:padding="4dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:background="@drawable/border_write"
+            android:layout_width="85dp"
+            android:layout_height="match_parent"
+            android:padding="4dp"
+            android:text="年终" />
+
+        <TextView
+            android:id="@+id/tv_nianzhong"
+            android:background="@drawable/border_write"
+            android:layout_width="95dp"
+            android:layout_height="match_parent"
+            android:padding="4dp" />
+
+        <TextView
+            android:id="@+id/tv_nianzhong_shui"
+            android:background="@drawable/border_write"
+            android:layout_width="85dp"
+            android:layout_height="match_parent"
+            android:padding="4dp"/>
+
+        <TextView
+            android:id="@+id/tv_nianzhong_qita"
+            android:background="@drawable/border_write"
+            android:layout_width="95dp"
+            android:layout_height="match_parent"
+            android:padding="4dp"/>
+    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:background="@drawable/border_write"
+                android:layout_width="85dp"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                android:text="汇总" />
+
+            <TextView
+                android:id="@+id/tv_huizong_nian"
+                android:background="@drawable/border_write"
+                android:layout_width="95dp"
+                android:layout_height="match_parent"
+                android:padding="4dp" />
+
+            <TextView
+                android:id="@+id/tv_huizong_nian_shui"
+                android:background="@drawable/border_write"
+                android:layout_width="85dp"
+                android:layout_height="match_parent"
+                android:padding="4dp"/>
+
+            <TextView
+                android:id="@+id/tv_huizong_qita"
+                android:background="@drawable/border_write"
+                android:layout_width="95dp"
+                android:layout_height="match_parent"
+                android:padding="4dp"/>
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+</ScrollView>
+</LinearLayout>

@@ -10,12 +10,19 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.xiaoming.so.MyJni;
+import com.qmuiteam.qmui.util.QMUIStatusBarHelper;
+
+import dalvik.system.DexClassLoader;
+
 public class MainActivity extends AppCompatActivity {
     private Button btn;
     private  Button uJisuan;
     private double sum;
     private double del = 0;
     private TextView textView;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +31,10 @@ public class MainActivity extends AppCompatActivity {
         btn = (Button) findViewById(R.id.btn1);
         Log.e("msg_ming", String.valueOf(btn.getText()));
         textView = (TextView) findViewById(R.id.textView);
+        Log.v("ming","调用so输出：" + MyJni.sayHello());
+        QMUIStatusBarHelper.translucent(this);
+        MyJni mj = new MyJni();
+        Log.v("ming", "实例化MyJni" + mj.name);
     }
 
     public String getString(String s){
@@ -31,11 +42,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickNum(View v) {
+
         btn = (Button)v;
         String message;
         String now = String.valueOf(btn.getText());
         now = getString(now);
         Log.i("点击", now + "");
+        Log.v("ming","调用so输出：" + MyJni.sayHello());
         Toast.makeText(MainActivity.this, now, Toast.LENGTH_SHORT).show();
         TextView TextView = (TextView) findViewById(R.id.textView);
         String m1 = String.valueOf(TextView.getText());
@@ -79,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
     public void cClick (View v){
         textView.setText("0");
     }
-
+    //显式intent启动
     public void webBaidu (View v){
         //Intent intent = new Intent(MainActivity.this, WebViewActivity.class);
         Intent intent = new Intent();
@@ -87,17 +100,25 @@ public class MainActivity extends AppCompatActivity {
         Log.i("ming","成功");
         startActivity(intent);
     }
-
-    public void grshui(View v){
+    //显式intent启动
+    public void grshui_bak(View v){
         Intent intent = new Intent();
         intent.setClass(MainActivity.this,Tax.class);
         startActivity(intent);
         Log.i("ming","切换到个税计算页面");
     }
-
-    public void grshui2(View v){
+    //隐式intent启动
+    public void grshui(View v){
         Intent intent = new Intent();
-        intent.setClass(MainActivity.this,Tax2.class);
+        intent.setAction("MyAction");
+        intent.addCategory("android.intent.category.DEFAULT");
+        startActivity(intent);
+        Log.i("ming","切换到个税计算页面");
+    }
+    //显式intent启动
+    public void grshui2(View v){
+        Intent intent = new Intent(this,Tax2.class);
+        //intent.setClass(MainActivity.this,Tax2.class);
         startActivity(intent);
         Log.i("ming","切换到个税计算-年页面");
     }

@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.qmuiteam.qmui.layout.QMUILinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/a5289ea327362bcb2824e486afbe9339a"
+    android:background="@drawable/geshui32"
     android:orientation="vertical">
 
 <ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="30dp"
+    android:paddingTop="20dp"
     >
-    <com.qmuiteam.qmui.layout.QMUILinearLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-        <com.qmuiteam.qmui.layout.QMUILinearLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView
@@ -32,11 +32,11 @@
                 android:inputType="numberDecimal"
                 android:padding="4dp"
                 />
-        </com.qmuiteam.qmui.layout.QMUILinearLayout>
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="31dp">
+            android:layout_height="wrap_content">
             <TextView
                 
                 android:layout_width="85dp"
@@ -46,8 +46,9 @@
 
             <EditText
                 android:id="@+id/et_jishu"
+
                 android:layout_width="match_parent"
-                android:layout_height="31dp"
+                android:layout_height="18dp"
                 android:inputType="numberDecimal"
                 android:padding="4dp" />
         </LinearLayout>
@@ -609,7 +610,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <com.qmuiteam.qmui.layout.QMUIButton
+            <Button
                 android:id="@+id/tax_cacl"
                 
                 android:layout_width="85dp"
@@ -1276,6 +1277,6 @@
 
 
 
-    </com.qmuiteam.qmui.layout.QMUILinearLayout>
+    </LinearLayout>
 </ScrollView>
-</com.qmuiteam.qmui.layout.QMUILinearLayout>
+</LinearLayout>

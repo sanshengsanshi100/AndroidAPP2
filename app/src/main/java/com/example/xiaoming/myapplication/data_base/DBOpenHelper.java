@@ -95,6 +95,13 @@ public class DBOpenHelper extends SQLiteOpenHelper implements BaseColumns {
         Log.i("ming", "执行完成 修改表内容");
     }
 
+    //查找表内容--未完成
+    public void selectData(SQLiteDatabase db,String  tableName,String geren,String gongsi){
+        String s = "select "+tableName+" set "+ _gongsi+"='"+gongsi +"',"+ _geren+"='"+geren +"' where _ID ='1';";
+        Log.i("ming", s);
+        db.execSQL(s);
+        Log.i("ming", "执行完成 修改表内容");
+    }
 
 
     @Override

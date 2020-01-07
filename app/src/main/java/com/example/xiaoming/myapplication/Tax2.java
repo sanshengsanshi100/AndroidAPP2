@@ -12,208 +12,255 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.xiaoming.myapplication.data_base.DBOpenHelper;
+import com.qmuiteam.qmui.util.QMUIStatusBarHelper;
+import com.example.xiaoming.myapplication.Util.TaxUtil;
+
 
 import java.util.HashMap;
 import java.util.Map;
 
 //import android.support.v7.app.AppCompatActivity;
 
-public class Tax2 extends AppCompatActivity {
+public class Tax2 extends AppCompatActivity{
 
-    private EditText tvBefore;
-    private TextView tvAfter;
-    private TextView tvGongjijin;
-    private TextView tvBuchongGongjijin;
-    private TextView tvYanglao;
-    private TextView tvyiliao;
-    private TextView tvshiye;
-    private TextView tvshengyu;
-    private TextView tvhuizong;
-    private TextView tvhuizong_bl;
-    private EditText etjishu;
-    private TextView tshui;
-    private EditText etyueshu;
-    private TextView tvqiyenianjin;
+    public EditText tvBefore;
+    public TextView tvAfter;
+    public TextView tvGongjijin;
+    public TextView tvBuchongGongjijin;
+    public TextView tvYanglao;
+    public TextView tvyiliao;
+    public TextView tvshiye;
+    public TextView tvshengyu;
+    public TextView tvhuizong;
+    public TextView tvhuizong_bl;
+    public EditText etjishu;
+    public TextView tshui;
+    public EditText etyueshu;
+    public TextView tvqiyenianjin;
     //公司部分
-    private TextView tvGongjijin_gs;
-    private TextView tvBuchongGongjijin_gs;
-    private TextView tvYanglao_gs;
-    private TextView tvyiliao_gs;
-    private TextView tvshiye_gs;
-    private TextView tvshengyu_gs;
-    private TextView tvgongshang_gs;
-    private TextView tvhuizong_gs;
-    private TextView tvhuizong_gs_bl;
-    private TextView tvqiyenianjin_gs;
-    private TextView tvzongzhichu_gs;
+    public TextView tvGongjijin_gs;
+    public TextView tvBuchongGongjijin_gs;
+    public TextView tvYanglao_gs;
+    public TextView tvyiliao_gs;
+    public TextView tvshiye_gs;
+    public TextView tvshengyu_gs;
+    public TextView tvgongshang_gs;
+    public TextView tvhuizong_gs;
+    public TextView tvhuizong_gs_bl;
+    public TextView tvqiyenianjin_gs;
+    public TextView tvzongzhichu_gs;
     //设置月薪基数=12
-    private final BigDecimal YXJS = new BigDecimal("12");
+    public final BigDecimal YXJS = new BigDecimal("12");
     //年终奖部分
-    private TextView tvNianzhongjiang;
-    private TextView tvNianzhongjiang_shui;
+    public TextView tvNianzhongjiang;
+    public TextView tvNianzhongjiang_shui;
     //年薪
-    private TextView tvNianxin;
+    public TextView tvNianxin;
     //专项扣除
-    private EditText etZhuanxiangkouchu;
+    public EditText etZhuanxiangkouchu;
     //设置全局专项扣除变量
-    private BigDecimal bdZhuanxiangkouchu = new BigDecimal("0");
+    public BigDecimal bdZhuanxiangkouchu = new BigDecimal("0");
     //年薪+公积金
-    private TextView tvNIanxinjiajin;
-    private DBOpenHelper helper;
-    private SQLiteDatabase db;
+    public TextView tvNIanxinjiajin;
+    public DBOpenHelper helper;
+    public SQLiteDatabase db;
 
 
     //回填各种比例用
-    private EditText etGongjijin_gs_bl;
-    private EditText etBuchongGongjijin_gs_bl;
-    private EditText etYanglao_gs_bl;
-    private EditText etyiliao_gs_bl;
-    private EditText etshiye_gs_bl;
-    private EditText etgongshang_gs_bl;
-    private EditText etshengyu_gs_bl;
-    private EditText etqiyenianjin_gs_bl;
-    private EditText ethuizong_gs_bl;
-    private EditText etGongjijin_bl;
-    private EditText etBuchongGongjijin_bl;
-    private EditText etYanglao_bl;
-    private EditText etyiliao_bl;
-    private EditText etshiye_bl;
-    private EditText etgongshang_bl;
-    private EditText etshengyu_bl;
-    private EditText etqiyenianjin_bl;
-    private EditText ethuizong_bl;
+    public EditText etGongjijin_gs_bl;
+    public EditText etBuchongGongjijin_gs_bl;
+    public EditText etYanglao_gs_bl;
+    public EditText etyiliao_gs_bl;
+    public EditText etshiye_gs_bl;
+    public EditText etgongshang_gs_bl;
+    public EditText etshengyu_gs_bl;
+    public EditText etqiyenianjin_gs_bl;
+    public EditText ethuizong_gs_bl;
+    public EditText etGongjijin_bl;
+    public EditText etBuchongGongjijin_bl;
+    public EditText etYanglao_bl;
+    public EditText etyiliao_bl;
+    public EditText etshiye_bl;
+    public EditText etgongshang_bl;
+    public EditText etshengyu_bl;
+    public EditText etqiyenianjin_bl;
+    public EditText ethuizong_bl;
 
     //回填各月的收入和个税
 
-    private TextView tv_1yue_shui;
-    private TextView tv_2yue_shui;
-    private TextView tv_3yue_shui;
-    private TextView tv_4yue_shui;
-    private TextView tv_5yue_shui;
-    private TextView tv_6yue_shui;
-    private TextView tv_7yue_shui;
-    private TextView tv_8yue_shui;
-    private TextView tv_9yue_shui;
-    private TextView tv_10yue_shui;
-    private TextView tv_11yue_shui;
-    private TextView tv_12yue_shui;
-    private TextView tv_nianzhong_shui;
-    private TextView tv_huizong_nian_shui;
+    public TextView tv_1yue_shui;
+    public TextView tv_2yue_shui;
+    public TextView tv_3yue_shui;
+    public TextView tv_4yue_shui;
+    public TextView tv_5yue_shui;
+    public TextView tv_6yue_shui;
+    public TextView tv_7yue_shui;
+    public TextView tv_8yue_shui;
+    public TextView tv_9yue_shui;
+    public TextView tv_10yue_shui;
+    public TextView tv_11yue_shui;
+    public TextView tv_12yue_shui;
+    public TextView tv_nianzhong_shui;
+    public TextView tv_huizong_nian_shui;
 
-    private TextView tv_1yue;
-    private TextView tv_2yue;
-    private TextView tv_3yue;
-    private TextView tv_4yue;
-    private TextView tv_5yue;
-    private TextView tv_6yue;
-    private TextView tv_7yue;
-    private TextView tv_8yue;
-    private TextView tv_9yue;
-    private TextView tv_10yue;
-    private TextView tv_11yue;
-    private TextView tv_12yue;
-    private TextView tv_nianzhong;
-    private TextView tv_huizong_nian;
-
+    public TextView tv_1yue;
+    public TextView tv_2yue;
+    public TextView tv_3yue;
+    public TextView tv_4yue;
+    public TextView tv_5yue;
+    public TextView tv_6yue;
+    public TextView tv_7yue;
+    public TextView tv_8yue;
+    public TextView tv_9yue;
+    public TextView tv_10yue;
+    public TextView tv_11yue;
+    public TextView tv_12yue;
+    public TextView tv_nianzhong;
+    public TextView tv_huizong_nian;
 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tax2);
+        //实现状态栏沉浸效果
+        QMUIStatusBarHelper.translucent(this);
 
-        tvBefore = (EditText)findViewById(R.id.et_before);
-        tvAfter = (TextView)findViewById(R.id.et_after);
-        tvGongjijin = (TextView)findViewById(R.id.tv_gongjijin);
-        tvBuchongGongjijin = (TextView)findViewById(R.id.tv_buchong);
-        tvYanglao = (TextView)findViewById(R.id.tv_yanglao);
-        tvyiliao = (TextView)findViewById(R.id.tv_yiliao);
-        tvshiye = (TextView)findViewById(R.id.tv_shiye);
+        new Thread(new Runnable(){
+            @Override
+            public void run(){
+                //处理具体的逻辑
+                tvBefore = (EditText)findViewById(R.id.et_before);
+                tvAfter = (TextView)findViewById(R.id.et_after);
+                tvGongjijin = (TextView)findViewById(R.id.tv_gongjijin);
+                tvBuchongGongjijin = (TextView)findViewById(R.id.tv_buchong);
+                tvYanglao = (TextView)findViewById(R.id.tv_yanglao);
+                tvyiliao = (TextView)findViewById(R.id.tv_yiliao);
+                tvshiye = (TextView)findViewById(R.id.tv_shiye);
 
-        etjishu = (EditText) findViewById(R.id.et_jishu);
-        tshui = (TextView)findViewById(R.id.tv_shui);
-        tvhuizong = (TextView)findViewById(R.id.tv_huizong);
-        etyueshu = (EditText)findViewById(R.id.et_yueshu);
-        tvhuizong_bl = (TextView)findViewById(R.id.bl_huizong);
-        tvqiyenianjin = (TextView)findViewById(R.id.tv_nianjin);
-        //公司部分
-        tvGongjijin_gs = (TextView)findViewById(R.id.tv_gongjijin_gs);
-        tvBuchongGongjijin_gs = (TextView)findViewById(R.id.tv_buchong_gs);
-        tvYanglao_gs = (TextView)findViewById(R.id.tv_yanglao_gs);
-        tvyiliao_gs = (TextView)findViewById(R.id.tv_yiliao_gs);
-        tvshiye_gs = (TextView)findViewById(R.id.tv_shiye_gs);
-        tvshengyu_gs = (TextView)findViewById(R.id.tv_shengyu_gs);
-        tvgongshang_gs = (TextView)findViewById(R.id.tv_gongshang_gs);
-        tvhuizong_gs = (TextView)findViewById(R.id.tv__huizong_gs);
-        tvhuizong_gs_bl = (TextView)findViewById(R.id.bl_huizong_gs);
-        tvqiyenianjin_gs = (TextView)findViewById(R.id.tv_nianjin_gs);
-        tvzongzhichu_gs = (TextView)findViewById(R.id.tv_zongzhichu);
-        //年终奖
-        tvNianzhongjiang = (TextView)findViewById(R.id.tv_nianzhongjiang);
-        tvNianzhongjiang_shui = (TextView)findViewById(R.id.tv_nianzhongjiang_shui);
-        //年薪
-        tvNianxin = (TextView)findViewById(R.id.tv_nianxin);
-        //专项扣除
-        etZhuanxiangkouchu = (EditText) findViewById(R.id.et_zhuanxiangkouchu);
-        //年薪加公积金
-        tvNIanxinjiajin = (TextView)findViewById(R.id.tv_nianxinjiajin);
+                etjishu = (EditText) findViewById(R.id.et_jishu);
+                tshui = (TextView)findViewById(R.id.tv_shui);
+                tvhuizong = (TextView)findViewById(R.id.tv_huizong);
+                etyueshu = (EditText)findViewById(R.id.et_yueshu);
+                tvhuizong_bl = (TextView)findViewById(R.id.bl_huizong);
+                tvqiyenianjin = (TextView)findViewById(R.id.tv_nianjin);
+                //公司部分
+                tvGongjijin_gs = (TextView)findViewById(R.id.tv_gongjijin_gs);
+                tvBuchongGongjijin_gs = (TextView)findViewById(R.id.tv_buchong_gs);
+                tvYanglao_gs = (TextView)findViewById(R.id.tv_yanglao_gs);
+                tvyiliao_gs = (TextView)findViewById(R.id.tv_yiliao_gs);
+                tvshiye_gs = (TextView)findViewById(R.id.tv_shiye_gs);
+                tvshengyu_gs = (TextView)findViewById(R.id.tv_shengyu_gs);
+                tvgongshang_gs = (TextView)findViewById(R.id.tv_gongshang_gs);
+                tvhuizong_gs = (TextView)findViewById(R.id.tv__huizong_gs);
+                tvhuizong_gs_bl = (TextView)findViewById(R.id.bl_huizong_gs);
+                tvqiyenianjin_gs = (TextView)findViewById(R.id.tv_nianjin_gs);
+                tvzongzhichu_gs = (TextView)findViewById(R.id.tv_zongzhichu);
+                //年终奖
+                tvNianzhongjiang = (TextView)findViewById(R.id.tv_nianzhongjiang);
+                tvNianzhongjiang_shui = (TextView)findViewById(R.id.tv_nianzhongjiang_shui);
+                //年薪
+                tvNianxin = (TextView)findViewById(R.id.tv_nianxin);
+                //专项扣除
+                etZhuanxiangkouchu = (EditText) findViewById(R.id.et_zhuanxiangkouchu);
+                //年薪加公积金
+                tvNIanxinjiajin = (TextView)findViewById(R.id.tv_nianxinjiajin);
 
-        //获取比例输入框
-        etGongjijin_gs_bl = getView(R.id.bl_gongjijin_gs);
-        etBuchongGongjijin_gs_bl = getView(R.id.bl_buchong_gs);
-        etYanglao_gs_bl = getView(R.id.bl_yanglao_gs);
-        etyiliao_gs_bl = getView(R.id.bl_yiliao_gs);
-        etshiye_gs_bl = getView(R.id.bl_shiye_gs);
-        etgongshang_gs_bl = getView(R.id.bl_gongshang_gs);
-        etshengyu_gs_bl = getView(R.id.bl_shengyu_gs);
-        etqiyenianjin_gs_bl = getView(R.id.bl_nianjin_gs);
-        //ethuizong_gs_bl = getView(R.id.bl_huizong_gs);
-        etGongjijin_bl = getView(R.id.bl_gongjijin);
-        etBuchongGongjijin_bl = getView(R.id.bl_buchong);
-        etYanglao_bl = getView(R.id.bl_yanglao);
-        etyiliao_bl = getView(R.id.bl_yiliao);
-        etshiye_bl = getView(R.id.bl_shiye);
-        etgongshang_bl = getView(R.id.bl_gongshang);
-        etshengyu_bl = getView(R.id.bl_shengyu);
-        etqiyenianjin_bl = getView(R.id.bl_nianjin);
-        //ethuizong_bl = getView(R.id.bl_huizong);
+                //获取比例输入框
+                etGongjijin_gs_bl = getView(R.id.bl_gongjijin_gs);
+                etBuchongGongjijin_gs_bl = getView(R.id.bl_buchong_gs);
+                etYanglao_gs_bl = getView(R.id.bl_yanglao_gs);
+                etyiliao_gs_bl = getView(R.id.bl_yiliao_gs);
+                etshiye_gs_bl = getView(R.id.bl_shiye_gs);
+                etgongshang_gs_bl = getView(R.id.bl_gongshang_gs);
+                etshengyu_gs_bl = getView(R.id.bl_shengyu_gs);
+                etqiyenianjin_gs_bl = getView(R.id.bl_nianjin_gs);
+                //ethuizong_gs_bl = getView(R.id.bl_huizong_gs);
+                etGongjijin_bl = getView(R.id.bl_gongjijin);
+                etBuchongGongjijin_bl = getView(R.id.bl_buchong);
+                etYanglao_bl = getView(R.id.bl_yanglao);
+                etyiliao_bl = getView(R.id.bl_yiliao);
+                etshiye_bl = getView(R.id.bl_shiye);
+                etgongshang_bl = getView(R.id.bl_gongshang);
+                etshengyu_bl = getView(R.id.bl_shengyu);
+                etqiyenianjin_bl = getView(R.id.bl_nianjin);
+                //ethuizong_bl = getView(R.id.bl_huizong);
 
-        //按月显示个税和收入
-        tv_1yue = findViewById(R.id.tv_1yue);
-        tv_2yue = findViewById(R.id.tv_2yue);
-        tv_3yue = findViewById(R.id.tv_3yue);
-        tv_4yue = findViewById(R.id.tv_4yue);
-        tv_5yue = findViewById(R.id.tv_5yue);
-        tv_6yue = findViewById(R.id.tv_6yue);
-        tv_7yue = findViewById(R.id.tv_7yue);
-        tv_8yue = findViewById(R.id.tv_8yue);
-        tv_9yue = findViewById(R.id.tv_9yue);
-        tv_10yue = findViewById(R.id.tv_10yue);
-        tv_11yue = findViewById(R.id.tv_11yue);
-        tv_12yue = findViewById(R.id.tv_12yue);
-        tv_nianzhong = findViewById(R.id.tv_nianzhong);
-        tv_huizong_nian = findViewById(R.id.tv_huizong_nian);
+                //按月显示个税和收入
+                tv_1yue = findViewById(R.id.tv_1yue);
+                tv_2yue = findViewById(R.id.tv_2yue);
+                tv_3yue = findViewById(R.id.tv_3yue);
+                tv_4yue = findViewById(R.id.tv_4yue);
+                tv_5yue = findViewById(R.id.tv_5yue);
+                tv_6yue = findViewById(R.id.tv_6yue);
+                tv_7yue = findViewById(R.id.tv_7yue);
+                tv_8yue = findViewById(R.id.tv_8yue);
+                tv_9yue = findViewById(R.id.tv_9yue);
+                tv_10yue = findViewById(R.id.tv_10yue);
+                tv_11yue = findViewById(R.id.tv_11yue);
+                tv_12yue = findViewById(R.id.tv_12yue);
+                tv_nianzhong = findViewById(R.id.tv_nianzhong);
+                tv_huizong_nian = findViewById(R.id.tv_huizong_nian);
 
-        tv_1yue_shui = findViewById(R.id.tv_1yue_shui);
-        tv_2yue_shui = findViewById(R.id.tv_2yue_shui);
-        tv_3yue_shui = findViewById(R.id.tv_3yue_shui);
-        tv_4yue_shui = findViewById(R.id.tv_4yue_shui);
-        tv_5yue_shui = findViewById(R.id.tv_5yue_shui);
-        tv_6yue_shui = findViewById(R.id.tv_6yue_shui);
-        tv_7yue_shui = findViewById(R.id.tv_7yue_shui);
-        tv_8yue_shui = findViewById(R.id.tv_8yue_shui);
-        tv_9yue_shui = findViewById(R.id.tv_9yue_shui);
-        tv_10yue_shui = findViewById(R.id.tv_10yue_shui);
-        tv_11yue_shui = findViewById(R.id.tv_11yue_shui);
-        tv_12yue_shui = findViewById(R.id.tv_12yue_shui);
-        tv_nianzhong_shui = findViewById(R.id.tv_nianzhong_shui);
-        tv_huizong_nian_shui = findViewById(R.id.tv_huizong_nian_shui);
+                tv_1yue_shui = findViewById(R.id.tv_1yue_shui);
+                tv_2yue_shui = findViewById(R.id.tv_2yue_shui);
+                tv_3yue_shui = findViewById(R.id.tv_3yue_shui);
+                tv_4yue_shui = findViewById(R.id.tv_4yue_shui);
+                tv_5yue_shui = findViewById(R.id.tv_5yue_shui);
+                tv_6yue_shui = findViewById(R.id.tv_6yue_shui);
+                tv_7yue_shui = findViewById(R.id.tv_7yue_shui);
+                tv_8yue_shui = findViewById(R.id.tv_8yue_shui);
+                tv_9yue_shui = findViewById(R.id.tv_9yue_shui);
+                tv_10yue_shui = findViewById(R.id.tv_10yue_shui);
+                tv_11yue_shui = findViewById(R.id.tv_11yue_shui);
+                tv_12yue_shui = findViewById(R.id.tv_12yue_shui);
+                tv_nianzhong_shui = findViewById(R.id.tv_nianzhong_shui);
+                tv_huizong_nian_shui = findViewById(R.id.tv_huizong_nian_shui);
+
+
+            }
+        }).start();
 
         //创建一个数据库文件
         helper = new DBOpenHelper(this);
         //以下两种方式都可创建数据库文件
         //helper.getReadableDatabase();
         db = helper.getWritableDatabase();
+    }
+
+    
+
+
+    //保存事件
+    public void saveDataClick(View v){
+        Toast.makeText(this,"点击计算即可将缴费比例信息保存至数据库了",Toast.LENGTH_SHORT).show();
+
+
+    }
+
+    //保存自定义比例
+    public void saveData(SQLiteDatabase db,String tableName,BigDecimal bl_gs,BigDecimal bl_gr){
+        String gs = bl_gs.toString();
+        String gr = bl_gr.toString();
+        helper.updateTable(db,tableName,gr,gs);
+    }
+
+
+
+    //BigDecimal计算 获取输入框内容
+    public String getProportion2(int id){
+        EditText et = (EditText)findViewById(id);
+        String bl = String.valueOf(et.getText());
+        if (bl.equals("")){
+            return "0";
+        }else{
+            return bl;
+        }
+    }
+
+    public EditText getView(int id){
+        EditText et = (EditText)findViewById(id);
+        return et;
     }
 
     public void taxCacl(View v){
@@ -415,46 +462,11 @@ public class Tax2 extends AppCompatActivity {
                 saveData(db,"HZ",dhuizong_gs_bl,dhuizong_bl);
                 Toast.makeText(this,"数据库已更新",Toast.LENGTH_SHORT).show();
                 //
-
-
                 paste(beforR,bdBefor,dhuizong,bdYueshu.intValue());
 
             }
         }
     }
-
-
-    //保存事件
-    public void saveDataClick(View v){
-        Toast.makeText(this,"点击计算即可将缴费比例信息保存至数据库了",Toast.LENGTH_SHORT).show();
-    }
-
-
-    //保存自定义比例
-    public void saveData(SQLiteDatabase db,String tableName,BigDecimal bl_gs,BigDecimal bl_gr){
-        String gs = bl_gs.toString();
-        String gr = bl_gr.toString();
-        helper.updateTable(db,tableName,gr,gs);
-    }
-
-
-
-    //BigDecimal计算 获取输入框内容
-    public String getProportion2(int id){
-        EditText et = (EditText)findViewById(id);
-        String bl = String.valueOf(et.getText());
-        if (bl.equals("")){
-            return "0";
-        }else{
-            return bl;
-        }
-    }
-
-    public EditText getView(int id){
-        EditText et = (EditText)findViewById(id);
-        return et;
-    }
-
 
     //BigDecimal计算月薪纳税金额-月薪
     public BigDecimal taxCaclAfter(BigDecimal bd){

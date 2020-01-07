@@ -1,6 +1,7 @@
 package com.example.xiaoming.myapplication;
 
 import android.app.Activity;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -9,7 +10,6 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.FrameLayout;
-
 
 
 public class WebViewActivity extends Activity {
@@ -25,6 +25,7 @@ public class WebViewActivity extends Activity {
         WebView wv = (WebView)findViewById(R.id.web_view);
         Log.i("ming","启动新页面");
         initView();
+        WebView.setWebContentsDebuggingEnabled(true);
     }
 
 

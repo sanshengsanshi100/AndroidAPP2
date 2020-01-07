@@ -10,8 +10,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Tax_bak extends AppCompatActivity {
 
+public class Tax_bak extends AppCompatActivity {
     private EditText tvBefore;
     private TextView tvAfter;
     private TextView tvGongjijin;

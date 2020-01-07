@@ -8,11 +8,11 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme"
+        >
         <activity android:name=".MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
                 <!--添加以下一行后可以将整体黄色的报错去除：google不能抓取的警告-->
                 <action android:name="android.intent.action.VIEW" />
@@ -23,8 +23,23 @@
             android:name=".WebViewActivity">
         </activity>
         <!--闭合标签时如果没有内容则需要加个空格 不然会报错-->
-        <activity android:name=".Tax"> </activity>
+        <!--<activity android:name=".Tax"> </activity>-->
         <activity android:name=".Tax2"> </activity>
+
+        <activity android:name=".Tax">
+            <intent-filter>
+                <action android:name="MyAction"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+<!--                <data
+                    android:scheme="myscheme"
+                    android:host="myhost"
+                    android:port="9999"
+                    android:path="/blog/abc.html"
+                    android:pathPattern="//blog//./.html"
+                    android:pathPrefix="/blog"
+                    android:mimeType="mymimetype"/>-->
+            </intent-filter>
+        </activity>
 
     </application>
 

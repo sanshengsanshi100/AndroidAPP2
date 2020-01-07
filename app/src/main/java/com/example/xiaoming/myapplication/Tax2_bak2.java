@@ -3,18 +3,22 @@ package com.example.xiaoming.myapplication;
 import android.database.sqlite.SQLiteDatabase;
 import android.icu.math.BigDecimal;
 import android.os.Bundle;
-//import android.support.v7.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.view.View;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.xiaoming.myapplication.data_base.DBOpenHelper;
 import com.qmuiteam.qmui.util.QMUIStatusBarHelper;
 
-public class Tax extends AppCompatActivity {
+import java.util.HashMap;
+
+//import android.support.v7.app.AppCompatActivity;
+
+public class Tax2_bak2 extends AppCompatActivity {
 
     private EditText tvBefore;
     private TextView tvAfter;
@@ -79,11 +83,44 @@ public class Tax extends AppCompatActivity {
     private EditText etqiyenianjin_bl;
     private EditText ethuizong_bl;
 
+    //回填各月的收入和个税
+
+    private TextView tv_1yue_shui;
+    private TextView tv_2yue_shui;
+    private TextView tv_3yue_shui;
+    private TextView tv_4yue_shui;
+    private TextView tv_5yue_shui;
+    private TextView tv_6yue_shui;
+    private TextView tv_7yue_shui;
+    private TextView tv_8yue_shui;
+    private TextView tv_9yue_shui;
+    private TextView tv_10yue_shui;
+    private TextView tv_11yue_shui;
+    private TextView tv_12yue_shui;
+    private TextView tv_nianzhong_shui;
+    private TextView tv_huizong_nian_shui;
+
+    private TextView tv_1yue;
+    private TextView tv_2yue;
+    private TextView tv_3yue;
+    private TextView tv_4yue;
+    private TextView tv_5yue;
+    private TextView tv_6yue;
+    private TextView tv_7yue;
+    private TextView tv_8yue;
+    private TextView tv_9yue;
+    private TextView tv_10yue;
+    private TextView tv_11yue;
+    private TextView tv_12yue;
+    private TextView tv_nianzhong;
+    private TextView tv_huizong_nian;
+
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.tax);
+        setContentView(R.layout.tax2);
         //实现状态栏沉浸效果
         QMUIStatusBarHelper.translucent(this);
         tvBefore = (EditText)findViewById(R.id.et_before);
@@ -142,6 +179,36 @@ public class Tax extends AppCompatActivity {
         etqiyenianjin_bl = getView(R.id.bl_nianjin);
         //ethuizong_bl = getView(R.id.bl_huizong);
 
+        //按月显示个税和收入
+        tv_1yue = findViewById(R.id.tv_1yue);
+        tv_2yue = findViewById(R.id.tv_2yue);
+        tv_3yue = findViewById(R.id.tv_3yue);
+        tv_4yue = findViewById(R.id.tv_4yue);
+        tv_5yue = findViewById(R.id.tv_5yue);
+        tv_6yue = findViewById(R.id.tv_6yue);
+        tv_7yue = findViewById(R.id.tv_7yue);
+        tv_8yue = findViewById(R.id.tv_8yue);
+        tv_9yue = findViewById(R.id.tv_9yue);
+        tv_10yue = findViewById(R.id.tv_10yue);
+        tv_11yue = findViewById(R.id.tv_11yue);
+        tv_12yue = findViewById(R.id.tv_12yue);
+        tv_nianzhong = findViewById(R.id.tv_nianzhong);
+        tv_huizong_nian = findViewById(R.id.tv_huizong_nian);
+
+        tv_1yue_shui = findViewById(R.id.tv_1yue_shui);
+        tv_2yue_shui = findViewById(R.id.tv_2yue_shui);
+        tv_3yue_shui = findViewById(R.id.tv_3yue_shui);
+        tv_4yue_shui = findViewById(R.id.tv_4yue_shui);
+        tv_5yue_shui = findViewById(R.id.tv_5yue_shui);
+        tv_6yue_shui = findViewById(R.id.tv_6yue_shui);
+        tv_7yue_shui = findViewById(R.id.tv_7yue_shui);
+        tv_8yue_shui = findViewById(R.id.tv_8yue_shui);
+        tv_9yue_shui = findViewById(R.id.tv_9yue_shui);
+        tv_10yue_shui = findViewById(R.id.tv_10yue_shui);
+        tv_11yue_shui = findViewById(R.id.tv_11yue_shui);
+        tv_12yue_shui = findViewById(R.id.tv_12yue_shui);
+        tv_nianzhong_shui = findViewById(R.id.tv_nianzhong_shui);
+        tv_huizong_nian_shui = findViewById(R.id.tv_huizong_nian_shui);
 
         //创建一个数据库文件
         helper = new DBOpenHelper(this);
@@ -257,9 +324,9 @@ public class Tax extends AppCompatActivity {
             //金额和
             BigDecimal dhuizong_gs = dGongjijin_gs.add(dBuchongGongjijin_gs).add(dYanglao_gs).add(dyiliao_gs)
                     .add(dshiye_gs).add(dgongshang_gs).add(dqiyenianjin_gs).add(dshengyu_gs);
-
+            //扣除五险一金后的收入金额
             BigDecimal beforR = new BigDecimal(befor).subtract(dGongjijin).subtract(dBuchongGongjijin)
-                    .subtract(dYanglao).subtract(dyiliao).subtract(dshiye);
+                    .subtract(dYanglao).subtract(dyiliao).subtract(dshiye).subtract(dqiyenianjin);
             //缴税金额
             Log.e("ming", "befor=" + befor);
             Log.e("ming", "beforR=" + beforR.toString());
@@ -349,16 +416,18 @@ public class Tax extends AppCompatActivity {
                 saveData(db,"HZ",dhuizong_gs_bl,dhuizong_bl);
                 Toast.makeText(this,"数据库已更新",Toast.LENGTH_SHORT).show();
                 //
+                paste(beforR,bdBefor,dhuizong,bdYueshu.intValue());
 
             }
         }
-
     }
 
 
     //保存事件
     public void saveDataClick(View v){
         Toast.makeText(this,"点击计算即可将缴费比例信息保存至数据库了",Toast.LENGTH_SHORT).show();
+
+
     }
 
 
@@ -415,26 +484,26 @@ public class Tax extends AppCompatActivity {
         }
         return sum;
     }
-
+    //年终奖所得税
     public BigDecimal taxCaclAfterEnd(BigDecimal bd){
         BigDecimal sum = new BigDecimal("0.00");
         bd = bd.divide(YXJS);
         double d = bd.doubleValue();
         if (d > 0){
-            if (d <= 1500){
+            if (d <= 3000){
                 sum = bd.multiply(new BigDecimal("0.03"));
-            }else if (d > 1500 && d <= 4500){
-                sum = bd.multiply(new BigDecimal("0.1")).subtract(new BigDecimal("105"));
-            }else if(d > 4500 && d <= 9000){
-                sum = bd.multiply(new BigDecimal("0.2")).subtract(new BigDecimal("555"));
-            }else if(d > 9000 && d <= 35000){
-                sum = bd.multiply(new BigDecimal("0.25")).subtract(new BigDecimal("1005"));
+            }else if (d > 3000 && d <= 12000){
+                sum = bd.multiply(new BigDecimal("0.1")).subtract(new BigDecimal("210"));
+            }else if(d > 12000 && d <= 25000){
+                sum = bd.multiply(new BigDecimal("0.2")).subtract(new BigDecimal("1410"));
+            }else if(d > 25000 && d <= 35000){
+                sum = bd.multiply(new BigDecimal("0.25")).subtract(new BigDecimal("2660"));
             }else if(d > 35000 && d <= 55000){
-                sum = bd.multiply(new BigDecimal("0.3")).subtract(new BigDecimal("2755"));
+                sum = bd.multiply(new BigDecimal("0.3")).subtract(new BigDecimal("4410"));
             }else if(d > 55000 && d <= 80000){
-                sum = bd.multiply(new BigDecimal("0.35")).subtract(new BigDecimal("5505"));
+                sum = bd.multiply(new BigDecimal("0.35")).subtract(new BigDecimal("7160"));
             }else if(d > 80000){
-                sum = bd.multiply(new BigDecimal("0.45")).subtract(new BigDecimal("13505"));
+                sum = bd.multiply(new BigDecimal("0.45")).subtract(new BigDecimal("15160"));
             }
         }else{
             return sum;
@@ -442,6 +511,143 @@ public class Tax extends AppCompatActivity {
         return sum.multiply(YXJS);
     }
 
+
+
+    //BigDecimal计算月薪纳税金额-按年
+    public BigDecimal taxCaclAfterYear(BigDecimal bd ,BigDecimal dhuizong, int i){
+        BigDecimal sum = new BigDecimal("0.00");
+        //免征额
+        BigDecimal mianzhenge = BigDecimal.valueOf(5000);
+        //应纳税所得额=扣除五险一金后的收入*月数-免征额*当月月数-专项扣除*当月月数
+        BigDecimal yue = BigDecimal.valueOf(i);
+        BigDecimal full = BigDecimal.valueOf(12);
+        Log.v("taxCaclAfterYear","i=" + i + "   计算前的bd金额=" + bd.toString());
+        //方便计算年终奖，税前收入在传入时计算累计数值
+        if (i <= 12){
+            bd = bd.multiply(yue).subtract(dhuizong.multiply(yue)).subtract(mianzhenge.multiply(yue)).subtract(bdZhuanxiangkouchu.multiply(yue));
+        }else{
+            //超过12个月之后不再增加计算各类扣除数：社保公积金+专项扣除
+            //目前年终奖貌似不计入全年收入计税，所以先注释掉
+            bd = bd.multiply(yue).subtract(dhuizong.multiply(full)).subtract(mianzhenge.multiply(full)).subtract(bdZhuanxiangkouchu.multiply(full));
+        }
+        //bd = bd.subtract(mianzhenge.multiply(yue)).subtract(bdZhuanxiangkouchu.multiply(yue));
+        Log.v("taxCaclAfterYear","i=" + i + "   计算后的bd金额=" + bd.toString());
+        double d = bd.doubleValue();
+        if (d > 0){
+            if (d <= 36000){
+                sum = bd.multiply(new BigDecimal("0.03"));
+                //Log.v("<36000的税额","月份"+i+"收入"+ d +"税额："+ sum);
+            }else if (d > 36000 && d <= 144000){
+                sum = bd.multiply(new BigDecimal("0.1")).subtract(new BigDecimal("2520"));
+            }else if(d > 144000 && d <= 300000){
+                sum = bd.multiply(new BigDecimal("0.2")).subtract(new BigDecimal("16920"));
+            }else if(d > 300000 && d <= 420000){
+                sum = bd.multiply(new BigDecimal("0.25")).subtract(new BigDecimal("31920"));
+            }else if(d > 420000 && d <= 660000){
+                sum = bd.multiply(new BigDecimal("0.3")).subtract(new BigDecimal("52920"));
+            }else if(d > 660000 && d <= 960000){
+                sum = bd.multiply(new BigDecimal("0.35")).subtract(new BigDecimal("85920"));
+            }else if(d > 960000){
+                sum = bd.multiply(new BigDecimal("0.45")).subtract(new BigDecimal("181920"));
+            }
+        }else{
+            return sum;
+        }
+        return sum;
+    }
+
+
+    public HashMap taxCaclA(BigDecimal bd ,BigDecimal dhuizong, int i){
+        HashMap<String,BigDecimal> m = new HashMap();
+        BigDecimal sum = BigDecimal.valueOf(0);
+        if (i < 0){
+            Toast.makeText(this,"月份最少1个月",Toast.LENGTH_SHORT).show();
+        }else {
+            for (int j = 1; j <= i; j++) {
+                //if (j <= 12 || j == i){
+                String s = String.valueOf(j);
+                BigDecimal b = BigDecimal.valueOf(0);
+                if (j <= 12){
+                    b = taxCaclAfterYear(bd, dhuizong,j);
+                    Log.v("taxCaclA-循环1=","月份j:" + j + "   b=" + b.toString());
+                    if (j > 1) {
+                        b = taxCaclAfterYear(bd,dhuizong, j);
+                        for (int k = j - 1; k > 0; k--) {
+                            //b = b.subtract(taxCaclAfterYear(bd, k-1));
+                            try{
+                                b = b.subtract(m.get(String.valueOf(k)));
+                            }catch (Exception e){
+                                Log.v("Exception","月份超过12后计算个税时会初夏14月计算个税需要减掉13月个税的情况，此时跳过计算");
+                            }
+                        }
+                        Log.v("taxCaclA-循环=","月份k:" + j + "   b=" + b.toString());
+                    }
+                    m.put(s,b);
+                    sum = sum.add(b);
+                    Log.v("map的内容-循环内",m.toString());
+                }else if (j == i){
+                     b = taxCaclAfterEnd(bd.multiply(BigDecimal.valueOf(i - 12)));
+                     m.put(s,b);
+                     sum = sum.add(b);
+                }else{
+                    Log.v("跳过计算","月数大于12也不等于" + i + "跳过计算");
+                }
+            }
+        }
+        m.put(String.valueOf(i+1),sum);
+        Log.v("map的内容",m.toString());
+        Log.v("taxCaclA","taxCaclA执行完成，i=" + i);
+        return m;
+    }
+
+
+    public void paste (BigDecimal beforR,BigDecimal befor,BigDecimal dhuizong,int i){
+        BigDecimal beforR1 = BigDecimal.valueOf(0);
+        if (i > 12) {
+            beforR1 = beforR.multiply(BigDecimal.valueOf(12)).add(befor.multiply(BigDecimal.valueOf(i - 12)));
+        }else{
+            beforR1 = beforR.multiply(BigDecimal.valueOf(i));
+        }
+        HashMap m  = taxCaclA(befor,dhuizong,i);
+        tv_1yue_shui.setText(m.get("1").toString());
+        tv_2yue_shui.setText(m.get("2").toString());
+        tv_3yue_shui.setText(m.get("3").toString());
+        tv_4yue_shui.setText(m.get("4").toString());
+        tv_5yue_shui.setText(m.get("5").toString());
+        tv_6yue_shui.setText(m.get("6").toString());
+        tv_7yue_shui.setText(m.get("7").toString());
+        tv_8yue_shui.setText(m.get("8").toString());
+        tv_9yue_shui.setText(m.get("9").toString());
+        tv_10yue_shui.setText(m.get("10").toString());
+        tv_11yue_shui.setText(m.get("11").toString());
+        tv_12yue_shui.setText(m.get("12").toString());
+        if (i > 12){
+            tv_nianzhong_shui.setText(m.get(String.valueOf(i)).toString());
+        }else{
+            tv_nianzhong_shui.setText("木有年终奖");
+        }
+        tv_huizong_nian_shui.setText(m.get(String.valueOf(i+1)).toString());
+
+        tv_1yue.setText(String.format(beforR.subtract(new BigDecimal(m.get("1").toString())).toString() ,"%f"));
+        tv_2yue.setText(String.format(beforR.subtract(new BigDecimal(m.get("2").toString())).toString() ,"%f"));
+        tv_3yue.setText(String.format(beforR.subtract(new BigDecimal(m.get("3").toString())).toString() ,"%f"));
+        tv_4yue.setText(String.format(beforR.subtract(new BigDecimal(m.get("4").toString())).toString() ,"%f"));
+        tv_5yue.setText(String.format(beforR.subtract(new BigDecimal(m.get("5").toString())).toString() ,"%f"));
+        tv_6yue.setText(String.format(beforR.subtract(new BigDecimal(m.get("6").toString())).toString() ,"%f"));
+        tv_7yue.setText(String.format(beforR.subtract(new BigDecimal(m.get("7").toString())).toString() ,"%f"));
+        tv_8yue.setText(String.format(beforR.subtract(new BigDecimal(m.get("8").toString())).toString() ,"%f"));
+        tv_9yue.setText(String.format(beforR.subtract(new BigDecimal(m.get("9").toString())).toString() ,"%f"));
+        tv_10yue.setText(String.format(beforR.subtract(new BigDecimal(m.get("10").toString())).toString() ,"%f"));
+        tv_11yue.setText(String.format(beforR.subtract(new BigDecimal(m.get("11").toString())).toString() ,"%f"));
+        tv_12yue.setText(String.format(beforR.subtract(new BigDecimal(m.get("12").toString())).toString() ,"%f"));
+        if (i > 12){
+            Log.v("ming",m.get(String.valueOf(i)).toString());
+            tv_nianzhong.setText(String.format(befor.multiply(BigDecimal.valueOf(i -12)).subtract(new BigDecimal(m.get(String.valueOf(i)).toString())).toString() ,"%f"));
+        }else{
+            tv_nianzhong.setText("木有年终奖");
+        }
+        tv_huizong_nian.setText(String.format(beforR1.subtract(new BigDecimal(m.get(String.valueOf(i+1)).toString())).toString() ,"%f"));
+    }
 
 
 }

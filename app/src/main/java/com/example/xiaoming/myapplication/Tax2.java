@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.xiaoming.myapplication.Util.mLog;
 import com.example.xiaoming.myapplication.data_base.DBOpenHelper;
 import com.qmuiteam.qmui.util.QMUIStatusBarHelper;
 import com.example.xiaoming.myapplication.Util.TaxUtil;
@@ -317,7 +318,7 @@ public class Tax2 extends AppCompatActivity{
             BigDecimal dyiliao = new BigDecimal(jishu).multiply(dyiliao_bl).setScale(2, BigDecimal.ROUND_HALF_UP);
             //
             BigDecimal dshiye_bl = new BigDecimal(getProportion2(R.id.bl_shiye));
-            Log.e("ming", "dshiye_bl" + dshiye_bl);
+            mLog.e("ming", "dshiye_bl" + dshiye_bl);
             BigDecimal dshiye = new BigDecimal(jishu).multiply(dshiye_bl).setScale(2, BigDecimal.ROUND_HALF_UP);
 
             //工伤
@@ -326,7 +327,7 @@ public class Tax2 extends AppCompatActivity{
             //生育
             BigDecimal dshengyu_bl = new BigDecimal(getProportion2(R.id.bl_shengyu));
             BigDecimal dshengyu = new BigDecimal(jishu).multiply(dshengyu_bl).setScale(2, BigDecimal.ROUND_HALF_UP);
-            Log.e("ming", "生育险-公司：" + dshengyu.doubleValue());
+            mLog.e("ming", "生育险-公司：" + dshengyu.doubleValue());
 
             //企业年金
             BigDecimal dqiyenianjin_bl = new BigDecimal(getProportion2(R.id.bl_nianjin));
@@ -360,7 +361,7 @@ public class Tax2 extends AppCompatActivity{
             //生育
             BigDecimal dshengyu_gs_bl = new BigDecimal(getProportion2(R.id.bl_shengyu_gs));
             BigDecimal dshengyu_gs = new BigDecimal(jishu).multiply(dshengyu_gs_bl).setScale(2, BigDecimal.ROUND_HALF_UP);
-            Log.e("ming", "生育险-公司：" + dshengyu_gs.doubleValue());
+            mLog.e("ming", "生育险-公司：" + dshengyu_gs.doubleValue());
             //企业年金
             BigDecimal dqiyenianjin_gs_bl = new BigDecimal(getProportion2(R.id.bl_nianjin_gs));
             BigDecimal dqiyenianjin_gs = new BigDecimal(jishu).multiply(dqiyenianjin_gs_bl).setScale(2, BigDecimal.ROUND_HALF_UP);
@@ -374,8 +375,8 @@ public class Tax2 extends AppCompatActivity{
             BigDecimal beforR = new BigDecimal(befor).subtract(dGongjijin).subtract(dBuchongGongjijin)
                     .subtract(dYanglao).subtract(dyiliao).subtract(dshiye).subtract(dqiyenianjin);
             //缴税金额
-            Log.e("ming", "befor=" + befor);
-            Log.e("ming", "beforR=" + beforR.toString());
+            mLog.e("ming", "befor=" + befor);
+            mLog.e("ming", "beforR=" + beforR.toString());
             BigDecimal shui = taxCaclAfter(beforR).setScale(2, BigDecimal.ROUND_HALF_UP);
             //税后
             BigDecimal dAfter = beforR.subtract(shui).setScale(2, BigDecimal.ROUND_HALF_UP);
@@ -532,7 +533,7 @@ public class Tax2 extends AppCompatActivity{
         //应纳税所得额=扣除五险一金后的收入*月数-免征额*当月月数-专项扣除*当月月数
         BigDecimal yue = BigDecimal.valueOf(i);
         BigDecimal full = BigDecimal.valueOf(12);
-        Log.v("taxCaclAfterYear","i=" + i + "   计算前的bd金额=" + bd.toString());
+        mLog.v("taxCaclAfterYear","i=" + i + "   计算前的bd金额=" + bd.toString());
         //方便计算年终奖，税前收入在传入时计算累计数值
         if (i <= 12){
             bd = bd.multiply(yue).subtract(dhuizong.multiply(yue)).subtract(mianzhenge.multiply(yue)).subtract(bdZhuanxiangkouchu.multiply(yue));
@@ -542,12 +543,12 @@ public class Tax2 extends AppCompatActivity{
             bd = bd.multiply(yue).subtract(dhuizong.multiply(full)).subtract(mianzhenge.multiply(full)).subtract(bdZhuanxiangkouchu.multiply(full));
         }
         //bd = bd.subtract(mianzhenge.multiply(yue)).subtract(bdZhuanxiangkouchu.multiply(yue));
-        Log.v("taxCaclAfterYear","i=" + i + "   计算后的bd金额=" + bd.toString());
+        mLog.v("taxCaclAfterYear","i=" + i + "   计算后的bd金额=" + bd.toString());
         double d = bd.doubleValue();
         if (d > 0){
             if (d <= 36000){
                 sum = bd.multiply(new BigDecimal("0.03"));
-                //Log.v("<36000的税额","月份"+i+"收入"+ d +"税额："+ sum);
+                //mmLog.v("<36000的税额","月份"+i+"收入"+ d +"税额："+ sum);
             }else if (d > 36000 && d <= 144000){
                 sum = bd.multiply(new BigDecimal("0.1")).subtract(new BigDecimal("2520"));
             }else if(d > 144000 && d <= 300000){
@@ -580,7 +581,7 @@ public class Tax2 extends AppCompatActivity{
                 BigDecimal b = BigDecimal.valueOf(0);
                 if (j <= 12){
                     b = taxCaclAfterYear(bd, dhuizong,j);
-                    Log.v("taxCaclA-循环1=","月份j:" + j + "   b=" + b.toString());
+                    mLog.v("taxCaclA-循环1=","月份j:" + j + "   b=" + b.toString());
                     if (j > 1) {
                         b = taxCaclAfterYear(bd,dhuizong, j);
                         for (int k = j - 1; k > 0; k--) {
@@ -588,26 +589,26 @@ public class Tax2 extends AppCompatActivity{
                             try{
                                 b = b.subtract(m.get(String.valueOf(k)));
                             }catch (Exception e){
-                                Log.v("Exception","月份超过12后计算个税时会初夏14月计算个税需要减掉13月个税的情况，此时跳过计算");
+                                mLog.v("Exception","月份超过12后计算个税时会初夏14月计算个税需要减掉13月个税的情况，此时跳过计算");
                             }
                         }
-                        Log.v("taxCaclA-循环=","月份k:" + j + "   b=" + b.toString());
+                        mLog.v("taxCaclA-循环=","月份k:" + j + "   b=" + b.toString());
                     }
                     m.put(s,b);
                     sum = sum.add(b);
-                    Log.v("map的内容-循环内",m.toString());
+                    mLog.v("map的内容-循环内",m.toString());
                 }else if (j == i){
                      b = taxCaclAfterEnd(bd.multiply(BigDecimal.valueOf(i - 12)));
                      m.put(s,b);
                      sum = sum.add(b);
                 }else{
-                    Log.v("跳过计算","月数大于12也不等于" + i + "跳过计算");
+                    mLog.v("跳过计算","月数大于12也不等于" + i + "跳过计算");
                 }
             }
         }
         m.put(String.valueOf(i+1),sum);
-        Log.v("map的内容",m.toString());
-        Log.v("taxCaclA","taxCaclA执行完成，i=" + i);
+        mLog.v("map的内容",m.toString());
+        mLog.v("taxCaclA","taxCaclA执行完成，i=" + i);
         return m;
     }
 
@@ -652,7 +653,7 @@ public class Tax2 extends AppCompatActivity{
         tv_11yue.setText(String.format(beforR.subtract(new BigDecimal(m.get("11").toString())).toString() ,"%f"));
         tv_12yue.setText(String.format(beforR.subtract(new BigDecimal(m.get("12").toString())).toString() ,"%f"));
         if (i > 12){
-            Log.v("ming",m.get(String.valueOf(i)).toString());
+            mLog.v("ming",m.get(String.valueOf(i)).toString());
             tv_nianzhong.setText(String.format(befor.multiply(BigDecimal.valueOf(i -12)).subtract(new BigDecimal(m.get(String.valueOf(i)).toString())).toString() ,"%f"));
         }else{
             tv_nianzhong.setText("木有年终奖");

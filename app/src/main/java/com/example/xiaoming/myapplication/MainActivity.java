@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.xiaoming.myapplication.Util.mLog;
 import com.example.xiaoming.so.MyJni;
 import com.qmuiteam.qmui.util.QMUIStatusBarHelper;
 
@@ -29,12 +30,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         btn = (Button) findViewById(R.id.btn1);
-        Log.e("msg_ming", String.valueOf(btn.getText()));
+        mLog.e("msg_ming", String.valueOf(btn.getText()));
         textView = (TextView) findViewById(R.id.textView);
-        Log.v("ming","调用so输出：" + MyJni.sayHello());
+        mLog.v("ming","调用so输出：" + MyJni.sayHello());
         QMUIStatusBarHelper.translucent(this);
         MyJni mj = new MyJni();
-        Log.v("ming", "实例化MyJni" + mj.name);
+        mLog.v("ming", "实例化MyJni" + mj.name);
     }
 
     public String getString(String s){
@@ -47,12 +48,12 @@ public class MainActivity extends AppCompatActivity {
         String message;
         String now = String.valueOf(btn.getText());
         now = getString(now);
-        Log.i("点击", now + "");
-        Log.v("ming","调用so输出：" + MyJni.sayHello());
+        mLog.i("点击", now + "");
+        mLog.v("ming","调用so输出：" + MyJni.sayHello());
         Toast.makeText(MainActivity.this, now, Toast.LENGTH_SHORT).show();
         TextView TextView = (TextView) findViewById(R.id.textView);
         String m1 = String.valueOf(TextView.getText());
-        Log.i("当前数值", m1);
+        mLog.i("当前数值", m1);
         if (m1.equals("0")) {
             if(String.valueOf(btn.getText()).equals(".")){
                 message = m1 + now;
@@ -81,10 +82,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void delString(View v){
         String m1 = String.valueOf(textView.getText());
-        Log.i("ming","删除前"+m1);
+        mLog.i("ming","删除前"+m1);
         if (m1.length() > 0){
             m1 = m1.substring(0,m1.length()-1);
-            Log.i("ming","删除后"+m1);
+            mLog.i("ming","删除后"+m1);
         }
         textView.setText(m1);
     }
@@ -97,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
         //Intent intent = new Intent(MainActivity.this, WebViewActivity.class);
         Intent intent = new Intent();
         intent.setClass(MainActivity.this,WebViewActivity.class);
-        Log.i("ming","成功");
+        mLog.i("ming","成功");
         startActivity(intent);
     }
     //显式intent启动
@@ -105,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent();
         intent.setClass(MainActivity.this,Tax.class);
         startActivity(intent);
-        Log.i("ming","切换到个税计算页面");
+        mLog.i("ming","切换到个税计算页面");
     }
     //隐式intent启动
     public void grshui(View v){
@@ -113,14 +114,24 @@ public class MainActivity extends AppCompatActivity {
         intent.setAction("MyAction");
         intent.addCategory("android.intent.category.DEFAULT");
         startActivity(intent);
-        Log.i("ming","切换到个税计算页面");
+        mLog.i("ming","切换到个税计算页面");
     }
     //显式intent启动
     public void grshui2(View v){
         Intent intent = new Intent(this,Tax2.class);
         //intent.setClass(MainActivity.this,Tax2.class);
         startActivity(intent);
-        Log.i("ming","切换到个税计算-年页面");
+        mLog.i("ming","切换到个税计算-年页面");
+    }
+
+    //隐式intent启动
+    public void grshui3(View v){
+        Intent intent = new Intent();
+        intent.setAction("MyTax3");
+        intent.addCategory("android.intent.category.DEFAULT");
+        intent.addCategory("Tax3Category");
+        startActivity(intent);
+        mLog.i("ming","切换到个税计算-3页面");
     }
 
 

@@ -41,6 +41,18 @@
             </intent-filter>
         </activity>
 
+
+        <activity android:name=".Tax3" >
+            <intent-filter>
+                <action android:name="MyTax3" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="Tax3Category" />
+                <!--添加以下一行后可以将整体黄色的报错去除：google不能抓取的警告-->
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+
+
     </application>
 
 </manifest>

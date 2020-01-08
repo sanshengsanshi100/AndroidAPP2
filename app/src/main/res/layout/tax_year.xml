@@ -1,0 +1,1064 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="30dp">
+
+                <TextView
+                    android:layout_width="65dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:padding="4dp"
+                    android:text="专项扣除" />
+
+                <EditText
+                    android:id="@+id/et_zhuanxiangkouchu"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:inputType="numberDecimal"
+                    android:padding="4dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="65dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:padding="4dp"
+                    android:text="月份" />
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:padding="4dp"
+                    android:text="月薪" />
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:padding="4dp"
+                    android:text="基数" />
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:padding="4dp"
+                    android:text="比例" />
+
+                <TextView
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:padding="4dp"
+                    android:text="社保" />
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:padding="4dp"
+                    android:text="税前" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="65dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:padding="4dp"
+                    android:text="1月" />
+
+                <EditText
+                    android:id="@+id/ed_yx_1"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:inputType="numberDecimal"
+                    android:padding="4dp"
+                    android:text="5000"
+
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/ed_js_1"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:inputType="numberDecimal"
+                    android:padding="4dp"
+                    android:text="5000"
+
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/ed_bl_1"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:inputType="numberDecimal"
+                    android:padding="4dp"
+                    android:text="0.245"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/ed_sb_1"
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:padding="4dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_sq_1"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:padding="4dp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="65dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:padding="4dp"
+                    android:text="2月" />
+
+                <EditText
+                    android:id="@+id/ed_yx_2"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:inputType="numberDecimal"
+                    android:padding="4dp"
+                    android:text="5000"
+
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/ed_js_2"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:inputType="numberDecimal"
+                    android:padding="4dp"
+                    android:text="5000"
+
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/ed_bl_2"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:inputType="numberDecimal"
+                    android:padding="4dp"
+                    android:text="0.245"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/ed_sb_2"
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:padding="4dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_sq_2"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:padding="4dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="65dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:padding="4dp"
+                    android:text="3月" />
+
+                <EditText
+                    android:id="@+id/ed_yx_3"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:inputType="numberDecimal"
+                    android:padding="4dp"
+                    android:text="5000"
+
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/ed_js_3"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:inputType="numberDecimal"
+                    android:padding="4dp"
+                    android:text="5000"
+
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/ed_bl_3"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:inputType="numberDecimal"
+                    android:padding="4dp"
+                    android:text="0.245"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/ed_sb_3"
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:padding="4dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_sq_3"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:padding="4dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="65dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:padding="4dp"
+                    android:text="4月" />
+
+                <EditText
+                    android:id="@+id/ed_yx_4"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:inputType="numberDecimal"
+                    android:padding="4dp"
+                    android:text="5000"
+
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/ed_js_4"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:inputType="numberDecimal"
+                    android:padding="4dp"
+                    android:text="5000"
+
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/ed_bl_4"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:inputType="numberDecimal"
+                    android:padding="4dp"
+                    android:text="0.245"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/ed_sb_4"
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:padding="4dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_sq_4"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:padding="4dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="65dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:padding="4dp"
+                    android:text="5月" />
+
+                <EditText
+                    android:id="@+id/ed_yx_5"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:inputType="numberDecimal"
+                    android:padding="4dp"
+                    android:text="5000"
+
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/ed_js_5"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:inputType="numberDecimal"
+                    android:padding="4dp"
+                    android:text="5000"
+
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/ed_bl_5"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:inputType="numberDecimal"
+                    android:padding="4dp"
+                    android:text="0.245"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/ed_sb_5"
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:padding="4dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_sq_5"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:padding="4dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="65dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:padding="4dp"
+                    android:text="6月" />
+
+                <EditText
+                    android:id="@+id/ed_yx_6"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:inputType="numberDecimal"
+                    android:padding="4dp"
+                    android:text="5000"
+
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/ed_js_6"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:inputType="numberDecimal"
+                    android:padding="4dp"
+                    android:text="5000"
+
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/ed_bl_6"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:inputType="numberDecimal"
+                    android:padding="4dp"
+                    android:text="0.245"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/ed_sb_6"
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:padding="4dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_sq_6"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:padding="4dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="65dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:padding="4dp"
+                    android:text="7月" />
+
+                <EditText
+                    android:id="@+id/ed_yx_7"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:inputType="numberDecimal"
+                    android:padding="4dp"
+                    android:text="5000"
+
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/ed_js_7"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:inputType="numberDecimal"
+                    android:padding="4dp"
+                    android:text="5000"
+
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/ed_bl_7"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:inputType="numberDecimal"
+                    android:padding="4dp"
+                    android:text="0.245"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/ed_sb_7"
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:padding="4dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_sq_7"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:padding="4dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="65dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:padding="4dp"
+                    android:text="8月" />
+
+                <EditText
+                    android:id="@+id/ed_yx_8"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:inputType="numberDecimal"
+                    android:padding="4dp"
+                    android:text="5000"
+
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/ed_js_8"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:inputType="numberDecimal"
+                    android:padding="4dp"
+                    android:text="5000"
+
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/ed_bl_8"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:inputType="numberDecimal"
+                    android:padding="4dp"
+                    android:text="0.245"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/ed_sb_8"
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:padding="4dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_sq_8"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:padding="4dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="65dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:padding="4dp"
+                    android:text="9月" />
+
+                <EditText
+                    android:id="@+id/ed_yx_9"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:inputType="numberDecimal"
+                    android:padding="4dp"
+                    android:text="5000"
+
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/ed_js_9"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:inputType="numberDecimal"
+                    android:padding="4dp"
+                    android:text="5000"
+
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/ed_bl_9"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:inputType="numberDecimal"
+                    android:padding="4dp"
+                    android:text="0.245"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/ed_sb_9"
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:inputType="numberDecimal"
+                    android:padding="4dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_sq_9"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:padding="4dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="65dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:padding="4dp"
+                    android:text="10月" />
+
+                <EditText
+                    android:id="@+id/ed_yx_10"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:inputType="numberDecimal"
+                    android:padding="4dp"
+                    android:text="5000"
+
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/ed_js_10"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:inputType="numberDecimal"
+                    android:padding="4dp"
+                    android:text="5000"
+
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/ed_bl_10"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:inputType="numberDecimal"
+                    android:padding="4dp"
+                    android:text="0.245"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/ed_sb_10"
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:inputType="numberDecimal"
+                    android:padding="4dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_sq_10"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:padding="4dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="65dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:padding="4dp"
+                    android:text="11月" />
+
+                <EditText
+                    android:id="@+id/ed_yx_11"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:inputType="numberDecimal"
+                    android:padding="4dp"
+                    android:text="5000"
+
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/ed_js_11"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:inputType="numberDecimal"
+                    android:padding="4dp"
+                    android:text="5000"
+
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/ed_bl_11"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:inputType="numberDecimal"
+                    android:padding="4dp"
+                    android:text="0.245"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/ed_sb_11"
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:inputType="numberDecimal"
+                    android:padding="4dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_sq_11"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:padding="4dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="65dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:padding="4dp"
+                    android:text="12月" />
+
+                <EditText
+                    android:id="@+id/ed_yx_12"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:inputType="numberDecimal"
+                    android:padding="4dp"
+                    android:text="5000"
+
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/ed_js_12"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:inputType="numberDecimal"
+                    android:padding="4dp"
+                    android:text="5000"
+
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/ed_bl_12"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:inputType="numberDecimal"
+                    android:padding="4dp"
+                    android:text="0.245"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/ed_sb_12"
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:inputType="numberDecimal"
+                    android:padding="4dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_sq_12"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:padding="4dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="65dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:padding="4dp"
+                    android:text="年终奖" />
+
+                <EditText
+                    android:id="@+id/ed_yx_13"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:inputType="numberDecimal"
+                    android:padding="4dp"
+                    android:text="5000"
+
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/ed_js_13"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:inputType="numberDecimal"
+                    android:padding="4dp"
+                    android:text="5000"
+
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/ed_bl_13"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:inputType="numberDecimal"
+                    android:padding="4dp"
+                    android:text="0.245"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/ed_sb_13"
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:inputType="numberDecimal"
+                    android:padding="4dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_sq_13"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:padding="4dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="65dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:padding="4dp"
+                    android:text="汇总" />
+
+                <EditText
+                    android:id="@+id/ed_yx_14"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:inputType="numberDecimal"
+                    android:padding="4dp"
+                    android:text="5000"
+
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/ed_js_14"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:inputType="numberDecimal"
+                    android:padding="4dp"
+                    android:text="5000"
+
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/ed_bl_14"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:inputType="numberDecimal"
+                    android:padding="4dp"
+                    android:text="0.245"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/ed_sb_14"
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:padding="4dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_sq_14"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:padding="4dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/tax_cacl"
+                    android:layout_width="65dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/border_write"
+                    android:onClick="taxCacl"
+                    android:padding="4dp"
+                    android:text="计算" />
+
+                <Button
+                    android:id="@+id/tax_saveDataClick"
+                    android:layout_width="50dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/border_write"
+                    android:onClick="saveDataClick"
+                    android:padding="4dp"
+                    android:text="保存" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="65dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:padding="4dp"
+                    android:text="税前年薪" />
+
+                <TextView
+                    android:id="@+id/tv_shuiqiannianxin"
+                    android:layout_width="95dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:padding="4dp" />
+
+                <TextView
+                    android:layout_width="65dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:padding="4dp"
+                    android:text="缴税金额" />
+
+                <TextView
+                    android:id="@+id/tv_zongjiaoshui"
+                    android:layout_width="95dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:padding="4dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="65dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:padding="4dp"
+                    android:text="税后年薪" />
+
+                <TextView
+                    android:id="@+id/tv_nianxin_shuihou"
+                    android:layout_width="95dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:padding="4dp" />
+
+                <TextView
+                    android:layout_width="65dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:padding="4dp"
+                    android:text="年薪+金" />
+
+                <TextView
+                    android:id="@+id/tv_nianxinjiajin"
+                    android:layout_width="95dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_write"
+                    android:padding="4dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</androidx.appcompat.widget.LinearLayoutCompat>

@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.xiaoming.myapplication.Util.mLog;
 import com.example.xiaoming.myapplication.data_base.DBOpenHelper;
 import com.qmuiteam.qmui.util.QMUIStatusBarHelper;
 
@@ -204,7 +205,7 @@ public class Tax extends AppCompatActivity {
             BigDecimal dyiliao = new BigDecimal(jishu).multiply(dyiliao_bl).setScale(2, BigDecimal.ROUND_HALF_UP);
             //
             BigDecimal dshiye_bl = new BigDecimal(getProportion2(R.id.bl_shiye));
-            Log.e("ming", "dshiye_bl" + dshiye_bl);
+            mLog.e("ming", "dshiye_bl" + dshiye_bl);
             BigDecimal dshiye = new BigDecimal(jishu).multiply(dshiye_bl).setScale(2, BigDecimal.ROUND_HALF_UP);
 
             //工伤
@@ -213,7 +214,7 @@ public class Tax extends AppCompatActivity {
             //生育
             BigDecimal dshengyu_bl = new BigDecimal(getProportion2(R.id.bl_shengyu));
             BigDecimal dshengyu = new BigDecimal(jishu).multiply(dshengyu_bl).setScale(2, BigDecimal.ROUND_HALF_UP);
-            Log.e("ming", "生育险-公司：" + dshengyu.doubleValue());
+            mLog.e("ming", "生育险-公司：" + dshengyu.doubleValue());
 
             //企业年金
             BigDecimal dqiyenianjin_bl = new BigDecimal(getProportion2(R.id.bl_nianjin));
@@ -247,7 +248,7 @@ public class Tax extends AppCompatActivity {
             //生育
             BigDecimal dshengyu_gs_bl = new BigDecimal(getProportion2(R.id.bl_shengyu_gs));
             BigDecimal dshengyu_gs = new BigDecimal(jishu).multiply(dshengyu_gs_bl).setScale(2, BigDecimal.ROUND_HALF_UP);
-            Log.e("ming", "生育险-公司：" + dshengyu_gs.doubleValue());
+            mLog.e("ming", "生育险-公司：" + dshengyu_gs.doubleValue());
             //企业年金
             BigDecimal dqiyenianjin_gs_bl = new BigDecimal(getProportion2(R.id.bl_nianjin_gs));
             BigDecimal dqiyenianjin_gs = new BigDecimal(jishu).multiply(dqiyenianjin_gs_bl).setScale(2, BigDecimal.ROUND_HALF_UP);
@@ -261,8 +262,8 @@ public class Tax extends AppCompatActivity {
             BigDecimal beforR = new BigDecimal(befor).subtract(dGongjijin).subtract(dBuchongGongjijin)
                     .subtract(dYanglao).subtract(dyiliao).subtract(dshiye);
             //缴税金额
-            Log.e("ming", "befor=" + befor);
-            Log.e("ming", "beforR=" + beforR.toString());
+            mLog.e("ming", "befor=" + befor);
+            mLog.e("ming", "beforR=" + beforR.toString());
             BigDecimal shui = taxCaclAfter(beforR).setScale(2, BigDecimal.ROUND_HALF_UP);
             //税后
             BigDecimal dAfter = beforR.subtract(shui).setScale(2, BigDecimal.ROUND_HALF_UP);

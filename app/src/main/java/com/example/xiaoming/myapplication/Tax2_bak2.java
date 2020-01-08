@@ -536,7 +536,7 @@ public class Tax2_bak2 extends AppCompatActivity {
         if (d > 0){
             if (d <= 36000){
                 sum = bd.multiply(new BigDecimal("0.03"));
-                //Log.v("<36000的税额","月份"+i+"收入"+ d +"税额："+ sum);
+                //mLog.v("<36000的税额","月份"+i+"收入"+ d +"税额："+ sum);
             }else if (d > 36000 && d <= 144000){
                 sum = bd.multiply(new BigDecimal("0.1")).subtract(new BigDecimal("2520"));
             }else if(d > 144000 && d <= 300000){

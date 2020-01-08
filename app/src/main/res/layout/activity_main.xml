@@ -202,20 +202,27 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="webBaidu"
-            android:text="个税1"/>
+            android:text="个税"/>
 
         <Button
             android:id="@+id/btn_geshui"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="grshui"
-            android:text="个税2"/>
+            android:text="个税1"/>
 
         <Button
             android:id="@+id/btn_geshui2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="grshui2"
+            android:text="个税2"/>
+
+        <Button
+            android:id="@+id/btn_geshui3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="grshui3"
             android:text="个税3"/>
 
     </androidx.appcompat.widget.LinearLayoutCompat>

@@ -367,7 +367,7 @@ public class Tax3 extends AppCompatActivity{
         // 年薪-税前
         setMessage(nianxin,hzSq);
         // 缴税金额
-        BigDecimal shuie = taxCaclAfterYear(hzJs,getProportion2(zx));
+        BigDecimal shuie = taxCaclAfterYear(hzSq,getProportion2(zx));
         setMessage(jiaoshui,shuie);
         // 年薪-税后
         setMessage(shuihou,hzSq.subtract(shuie));
@@ -425,29 +425,33 @@ public class Tax3 extends AppCompatActivity{
 
 
     //BigDecimal计算月薪纳税金额-按年
-    public BigDecimal taxCaclAfterYear(BigDecimal hzYx ,BigDecimal zxkc){
+    public BigDecimal taxCaclAfterYear(BigDecimal sqyx ,BigDecimal zxkc){
         BigDecimal sum = new BigDecimal("0.00");
         //免征额
         BigDecimal mianzhenge = BigDecimal.valueOf(60000);
         //应纳税所得额=收入-免征额-专项扣除
-        mLog.v("taxCaclAfterYear","专项扣除=" + zxkc.toString() + "   计算前的年薪=" + hzYx.toString());
-        double d = hzYx.subtract(mianzhenge).subtract(zxkc).doubleValue();
+        mLog.v("taxCaclAfterYear","专项扣除=" + zxkc.toString() + "免征额=" + mianzhenge + "   计算前的年薪=" + sqyx.toString());
+        double d = sqyx.subtract(mianzhenge).subtract(zxkc).doubleValue();
+        mLog.v("taxCaclAfterYear","应纳税额=" + d);
+
+        sqyx = sqyx.subtract(mianzhenge).subtract(zxkc);
+        mLog.v("taxCaclAfterYear","hzYx=" + sqyx.toString());
         if (d > 0){
             if (d <= 36000){
-                sum = hzYx.multiply(new BigDecimal("0.03"));
+                sum = sqyx.multiply(new BigDecimal("0.03"));
                 //mmLog.v("<36000的税额","月份"+i+"收入"+ d +"税额："+ sum);
             }else if (d > 36000 && d <= 144000){
-                sum = hzYx.multiply(new BigDecimal("0.1")).subtract(new BigDecimal("2520"));
+                sum = sqyx.multiply(new BigDecimal("0.1")).subtract(new BigDecimal("2520"));
             }else if(d > 144000 && d <= 300000){
-                sum = hzYx.multiply(new BigDecimal("0.2")).subtract(new BigDecimal("16920"));
+                sum = sqyx.multiply(new BigDecimal("0.2")).subtract(new BigDecimal("16920"));
             }else if(d > 300000 && d <= 420000){
-                sum = hzYx.multiply(new BigDecimal("0.25")).subtract(new BigDecimal("31920"));
+                sum = sqyx.multiply(new BigDecimal("0.25")).subtract(new BigDecimal("31920"));
             }else if(d > 420000 && d <= 660000){
-                sum = hzYx.multiply(new BigDecimal("0.3")).subtract(new BigDecimal("52920"));
+                sum = sqyx.multiply(new BigDecimal("0.3")).subtract(new BigDecimal("52920"));
             }else if(d > 660000 && d <= 960000){
-                sum = hzYx.multiply(new BigDecimal("0.35")).subtract(new BigDecimal("85920"));
+                sum = sqyx.multiply(new BigDecimal("0.35")).subtract(new BigDecimal("85920"));
             }else if(d > 960000){
-                sum = hzYx.multiply(new BigDecimal("0.45")).subtract(new BigDecimal("181920"));
+                sum = sqyx.multiply(new BigDecimal("0.45")).subtract(new BigDecimal("181920"));
             }
         }else{
             return sum;

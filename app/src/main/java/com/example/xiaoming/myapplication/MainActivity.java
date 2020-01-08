@@ -134,6 +134,15 @@ public class MainActivity extends AppCompatActivity {
         mLog.i("ming","切换到个税计算-3页面");
     }
 
+    //隐式intent启动
+    public void yinyue(View v){
+        Intent intent = new Intent();
+        intent.setAction("MyMusic");
+        intent.addCategory("android.intent.category.DEFAULT");
+        intent.addCategory("Tax3Category");
+        startActivity(intent);
+        mLog.i("ming","切换到音乐页面");
+    }
 
 
 }

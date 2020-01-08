@@ -2,6 +2,7 @@
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/geshui"
     android:orientation="vertical">
 
     <ScrollView
@@ -74,7 +75,7 @@
                     android:text="社保" />
 
                 <TextView
-                    android:layout_width="80dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/border_write"
                     android:padding="4dp"
@@ -138,7 +139,7 @@
 
                 <TextView
                     android:id="@+id/tv_sq_1"
-                    android:layout_width="80dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/border_write"
                     android:padding="4dp" />
@@ -202,7 +203,7 @@
 
                 <TextView
                     android:id="@+id/tv_sq_2"
-                    android:layout_width="80dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/border_write"
                     android:padding="4dp" />
@@ -265,7 +266,7 @@
 
                 <TextView
                     android:id="@+id/tv_sq_3"
-                    android:layout_width="80dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/border_write"
                     android:padding="4dp" />
@@ -328,7 +329,7 @@
 
                 <TextView
                     android:id="@+id/tv_sq_4"
-                    android:layout_width="80dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/border_write"
                     android:padding="4dp" />
@@ -391,7 +392,7 @@
 
                 <TextView
                     android:id="@+id/tv_sq_5"
-                    android:layout_width="80dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/border_write"
                     android:padding="4dp" />
@@ -454,7 +455,7 @@
 
                 <TextView
                     android:id="@+id/tv_sq_6"
-                    android:layout_width="80dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/border_write"
                     android:padding="4dp" />
@@ -517,7 +518,7 @@
 
                 <TextView
                     android:id="@+id/tv_sq_7"
-                    android:layout_width="80dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/border_write"
                     android:padding="4dp" />
@@ -580,7 +581,7 @@
 
                 <TextView
                     android:id="@+id/tv_sq_8"
-                    android:layout_width="80dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/border_write"
                     android:padding="4dp" />
@@ -644,7 +645,7 @@
 
                 <TextView
                     android:id="@+id/tv_sq_9"
-                    android:layout_width="80dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/border_write"
                     android:padding="4dp" />
@@ -708,7 +709,7 @@
 
                 <TextView
                     android:id="@+id/tv_sq_10"
-                    android:layout_width="80dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/border_write"
                     android:padding="4dp" />
@@ -772,7 +773,7 @@
 
                 <TextView
                     android:id="@+id/tv_sq_11"
-                    android:layout_width="80dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/border_write"
                     android:padding="4dp" />
@@ -836,7 +837,7 @@
 
                 <TextView
                     android:id="@+id/tv_sq_12"
-                    android:layout_width="80dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/border_write"
                     android:padding="4dp" />
@@ -872,8 +873,6 @@
                     android:background="@drawable/border_write"
                     android:inputType="numberDecimal"
                     android:padding="4dp"
-                    android:text="5000"
-
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="12sp" />
 
@@ -884,7 +883,6 @@
                     android:background="@drawable/border_write"
                     android:inputType="numberDecimal"
                     android:padding="4dp"
-                    android:text="0.245"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="12sp" />
 
@@ -893,14 +891,13 @@
                     android:layout_width="70dp"
                     android:layout_height="match_parent"
                     android:background="@drawable/border_write"
-                    android:inputType="numberDecimal"
                     android:padding="4dp"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="12sp" />
 
                 <TextView
                     android:id="@+id/tv_sq_13"
-                    android:layout_width="80dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/border_write"
                     android:padding="4dp" />
@@ -924,8 +921,6 @@
                     android:background="@drawable/border_write"
                     android:inputType="numberDecimal"
                     android:padding="4dp"
-                    android:text="5000"
-
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="12sp" />
 
@@ -936,8 +931,6 @@
                     android:background="@drawable/border_write"
                     android:inputType="numberDecimal"
                     android:padding="4dp"
-                    android:text="5000"
-
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="12sp" />
 
@@ -948,7 +941,6 @@
                     android:background="@drawable/border_write"
                     android:inputType="numberDecimal"
                     android:padding="4dp"
-                    android:text="0.245"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="12sp" />
 
@@ -963,7 +955,7 @@
 
                 <TextView
                     android:id="@+id/tv_sq_14"
-                    android:layout_width="80dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/border_write"
                     android:padding="4dp" />
@@ -1006,7 +998,7 @@
 
                 <TextView
                     android:id="@+id/tv_shuiqiannianxin"
-                    android:layout_width="95dp"
+                    android:layout_width="115dp"
                     android:layout_height="match_parent"
                     android:background="@drawable/border_write"
                     android:padding="4dp" />
@@ -1020,7 +1012,7 @@
 
                 <TextView
                     android:id="@+id/tv_zongjiaoshui"
-                    android:layout_width="95dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/border_write"
                     android:padding="4dp" />
@@ -1040,7 +1032,7 @@
 
                 <TextView
                     android:id="@+id/tv_nianxin_shuihou"
-                    android:layout_width="95dp"
+                    android:layout_width="115dp"
                     android:layout_height="match_parent"
                     android:background="@drawable/border_write"
                     android:padding="4dp" />
@@ -1054,7 +1046,7 @@
 
                 <TextView
                     android:id="@+id/tv_nianxinjiajin"
-                    android:layout_width="95dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/border_write"
                     android:padding="4dp" />
